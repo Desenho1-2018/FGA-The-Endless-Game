@@ -1,7 +1,6 @@
 package game;
 
 import jplay.Sprite;
-import jplay.URL;
 
 public class Jogador extends Sprite{
 
