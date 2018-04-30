@@ -15,6 +15,9 @@ public class Encerrar {
 		runBackground0();
 		runBackground1();
 		runBackground2();
+		runBackground3();
+		runBackground4();
+		runBackground5();
 	}
 
 	private void runBackground0(){
@@ -70,5 +73,50 @@ public class Encerrar {
 		}
 	}
 	
+	private void runBackground3(){
+		
+		int control3 = 0;
+		
+		GameImage background3 = new GameImage(("src/recursos/sprite/Encerrar3.png"));
+		
+		while(true){
+			background.draw();
+			background3.draw();
+			
+			encerrarWindow.update();
+			control3++;
+			if(control3>4000)
+				break;
+		}
+	}
+	
+	private void runBackground4(){
+		
+		int control4 = 0;
+		
+		GameImage background4 = new GameImage(("src/recursos/sprite/Encerrar4.png"));
+		
+		while(true){
+			background.draw();
+			background4.draw();
+			
+			encerrarWindow.update();
+			control4++;
+			if(control4>4000)
+				break;
+		}
+	}
+	
+	private void runBackground5(){
+		
+		GameImage background5 = new GameImage(("src/recursos/sprite/Encerrar5.png"));
+		
+		while(true){
+			background.draw();
+			background5.draw();
+			
+			encerrarWindow.update();
+		}
+	}
 
 }
