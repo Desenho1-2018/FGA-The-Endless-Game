@@ -11,6 +11,7 @@ public class Cenario1 {
 	private Jogador jogador;
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
 	private GameObject wall;
+	private NPC npc;
 	public Cenario1(Window window){
 		
 		janela = window;
@@ -18,6 +19,7 @@ public class Cenario1 {
 		//cena.loadFromFile(URL.scenario("Cenario1.scn")); //carregando o arquivo com o mapa
 		jogador = new Jogador(640, 350);
 		wall = new GameObject(630,340);
+		npc = new NPC(300,300);
 		run();
 	}
 
@@ -27,6 +29,8 @@ public class Cenario1 {
 			//cena.draw();
 			backGround.draw();
 			jogador.draw();
+			npc.perseguir(jogador.x, jogador.y);
+			npc.draw();
 			wall.draw();
 			jogador.mover(janela);
 			janela.update();

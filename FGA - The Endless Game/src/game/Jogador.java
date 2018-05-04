@@ -5,7 +5,7 @@ import jplay.Sprite;
 import jplay.URL;
 import jplay.Window;
 
-public class Jogador extends Sprite{
+public class Jogador extends CharacterParent{
 
 	private double velocidade = 0.9;
 	private int direcao = 3;
