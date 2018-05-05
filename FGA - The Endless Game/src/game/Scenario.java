@@ -7,4 +7,5 @@ public abstract class Scenario extends Scene {
 
 		protected Window window;
 	
+		public void run() {};
 }

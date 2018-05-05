@@ -8,8 +8,13 @@ public class Introduction extends Scenario {
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA.jpeg"));
 	
-	public Introduction(Window window){
-		this.window = window;
+	public Introduction(Window gameWindow){
+	this.window = gameWindow;
+	}
+
+	
+	@Override
+	public void run() {
 		
 		runBackground0();
 		runBackground1();
@@ -17,8 +22,8 @@ public class Introduction extends Scenario {
 		runBackground3();
 		runBackground4();
 		runBackground5();
+	
 	}
-
 	private void runBackground0(){
 		
 		int control = 0;

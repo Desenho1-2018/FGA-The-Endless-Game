@@ -7,8 +7,13 @@ public class Encerrar extends Scenario {
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA1.jpeg"));
 	
-	public Encerrar(Window window){
-	this.window = window;
+	public Encerrar(Window gameWindow){
+	this.window = gameWindow;
+	}
+
+	
+	@Override
+	public void run() {
 		
 		runBackground0();
 		runBackground1();
@@ -16,8 +21,9 @@ public class Encerrar extends Scenario {
 		runBackground3();
 		runBackground4();
 		runBackground5();
+	
 	}
-
+	
 	private void runBackground0(){
 		
 		int control = 0;

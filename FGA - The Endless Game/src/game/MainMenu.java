@@ -10,18 +10,16 @@ public class MainMenu extends Scenario {
 	private GameButton passoworld_button;
 	private GameButton arrow;
 	
-	public MainMenu(Window window) {
+	public MainMenu(Window gameWindow) {
 	
-		this.window = window;
+		this.window = gameWindow;
 		start_button = new GameButton(300, 300, "src//recursos//sprite//iniciar_button.png");
 		passoworld_button = new GameButton(308, 350, "src//recursos//sprite//passworld_button.png");
 		arrow = new GameButton(250, 300, "src//recursos//sprite//arrow_button.png");
-		run();
-		
 	}
 	
-	private void run() {
-	
+	@Override
+	public void run() {
 		while(true) {
 			background.draw();
 			start_button.draw();
@@ -30,5 +28,7 @@ public class MainMenu extends Scenario {
 			window.update();
 		}
 	}
+	
+	
 	
 }

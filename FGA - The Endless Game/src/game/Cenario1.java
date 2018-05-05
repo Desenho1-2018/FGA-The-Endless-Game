@@ -9,19 +9,19 @@ public class Cenario1 extends Scenario {
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
 	private GameObject wall;
 	private NPC npc;
-	public Cenario1(Window window){
+	public Cenario1(Window gameWindow){
 		
-		this.window = window;
+		this.window = gameWindow;
 		jogador = new Jogador(640, 350);
 		wall = new GameObject(630,340);
 		npc = new NPC(300,300);
-		run();
 	}
 
-	private void run(){
+	@Override 
+	public void run(){
 		
 		while(true){
-			//cena.draw();
+
 			backGround.draw();
 			jogador.draw();
 			npc.perseguir(jogador.x, jogador.y);
