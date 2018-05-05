@@ -9,17 +9,23 @@ public class Cenario1 extends Scenario {
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
 	private GameObject wall;
 	private NPC npc;
-	public Cenario1(Window gameWindow){
+	public Cenario1(Window gameWindow, String name){
 		
 		this.window = gameWindow;
+		this.scenarioName = name;
 		jogador = new Jogador(640, 350);
 		wall = new GameObject(630,340);
 		npc = new NPC(300,300);
 	}
 
 	@Override 
-	public void run(){
+	public String run(){
 		
+		this.drawLevel();
+		return "NEXT_LEVEL";
+	}
+	
+	private void drawLevel() {
 		while(true){
 
 			backGround.draw();
@@ -30,7 +36,6 @@ public class Cenario1 extends Scenario {
 			jogador.mover(window);
 			window.update();
 			
-		}
-		
+		}		
 	}
 }

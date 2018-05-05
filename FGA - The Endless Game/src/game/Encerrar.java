@@ -7,13 +7,14 @@ public class Encerrar extends Scenario {
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA1.jpeg"));
 	
-	public Encerrar(Window gameWindow){
+	public Encerrar(Window gameWindow, String name){
 	this.window = gameWindow;
+	this.scenarioName = name;
 	}
 
 	
 	@Override
-	public void run() {
+	public String run() {
 		
 		runBackground0();
 		runBackground1();
@@ -22,6 +23,8 @@ public class Encerrar extends Scenario {
 		runBackground4();
 		runBackground5();
 	
+		return "StartMenu";
+		
 	}
 	
 	private void runBackground0(){
@@ -113,6 +116,8 @@ public class Encerrar extends Scenario {
 	
 	private void runBackground5(){
 		
+		int control5 = 0;
+		
 		GameImage background5 = new GameImage(("src/recursos/sprite/Encerrar5.png"));
 		
 		while(true){
@@ -120,6 +125,9 @@ public class Encerrar extends Scenario {
 			background5.draw();
 			
 			window.update();
+			control5++;
+			if(control5>4000)
+				break;
 		}
 	}
 

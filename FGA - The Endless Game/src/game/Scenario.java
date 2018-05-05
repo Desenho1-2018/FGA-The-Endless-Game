@@ -5,7 +5,19 @@ import jplay.Window;
 
 public abstract class Scenario extends Scene {
 
+		protected String scenarioName;
 		protected Window window;
+		
 	
-		public void run() {};
+		public String run() {
+		
+			return "LEVEL_DONT_FOUND";
+		
+		};
+		
+		public String getScenarioName() {
+			
+			return this.scenarioName;
+		}
+
 }

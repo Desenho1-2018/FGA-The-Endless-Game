@@ -8,13 +8,14 @@ public class Introduction extends Scenario {
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA.jpeg"));
 	
-	public Introduction(Window gameWindow){
+	public Introduction(Window gameWindow, String name){
 	this.window = gameWindow;
+	this.scenarioName = name;
 	}
 
 	
 	@Override
-	public void run() {
+	public String run() {
 		
 		runBackground0();
 		runBackground1();
@@ -22,6 +23,8 @@ public class Introduction extends Scenario {
 		runBackground3();
 		runBackground4();
 		runBackground5();
+		
+		return "FinishScene";
 	
 	}
 	private void runBackground0(){
@@ -113,6 +116,8 @@ public class Introduction extends Scenario {
 	
 	private void runBackground5(){
 		
+		int control5 = 0;
+		
 		GameImage background5 = new GameImage(("src/recursos/sprite/Intro5.png"));
 		
 		while(true){
@@ -120,6 +125,9 @@ public class Introduction extends Scenario {
 			background5.draw();
 			
 			window.update();
+			control5++;
+			if(control5>3300)
+				break;
 		}
 	}
 	
