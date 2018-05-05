@@ -2,6 +2,7 @@ package game;
 
 import jplay.Keyboard;
 import jplay.Sprite;
+import jplay.Window;
 
 public class Jogador extends CharacterParent{
 

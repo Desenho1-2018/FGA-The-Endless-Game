@@ -1,18 +1,15 @@
 package game;
 
 import jplay.GameImage;
-import jplay.Parallax;
-import jplay.ParallaxLayers;
 import jplay.Window;
 
-public class Introduction {
-	
-	private Window introductionWindow;
+public class Introduction extends Scenario {
+
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA.jpeg"));
 	
 	public Introduction(Window window){
-		introductionWindow = window;
+		this.window = window;
 		
 		runBackground0();
 		runBackground1();
@@ -33,7 +30,7 @@ public class Introduction {
 			
 			background0.draw();
 		
-			introductionWindow.update();
+			window.update();
 			control++;
 			if(control>2000)
 				break;
@@ -51,7 +48,7 @@ public class Introduction {
 			background.draw();
 			background1.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control1++;
 			if(control1>3300)
 				break;
@@ -68,7 +65,7 @@ public class Introduction {
 			background.draw();
 			background2.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control2++;
 			if(control2>3300)
 				break;
@@ -85,7 +82,7 @@ public class Introduction {
 			background.draw();
 			background3.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control3++;
 			if(control3>3300)
 				break;
@@ -102,7 +99,7 @@ public class Introduction {
 			background.draw();
 			background4.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control4++;
 			if(control4>3300)
 				break;
@@ -117,7 +114,7 @@ public class Introduction {
 			background.draw();
 			background5.draw();
 			
-			introductionWindow.update();
+			window.update();
 		}
 	}
 	

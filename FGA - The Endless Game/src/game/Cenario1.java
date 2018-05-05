@@ -3,19 +3,15 @@ package game;
 import jplay.GameImage;
 import jplay.Window;
 
-public class Cenario1 {
+public class Cenario1 extends Scenario {
 	
-	private Window janela;
-	//private Scene  cena;
 	private Jogador jogador;
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
 	private GameObject wall;
 	private NPC npc;
 	public Cenario1(Window window){
 		
-		janela = window;
-		//cena = new Scene();
-		//cena.loadFromFile(URL.scenario("Cenario1.scn")); //carregando o arquivo com o mapa
+		this.window = window;
 		jogador = new Jogador(640, 350);
 		wall = new GameObject(630,340);
 		npc = new NPC(300,300);
@@ -31,8 +27,8 @@ public class Cenario1 {
 			npc.perseguir(jogador.x, jogador.y);
 			npc.draw();
 			wall.draw();
-			jogador.mover(janela);
-			janela.update();
+			jogador.mover(window);
+			window.update();
 			
 		}
 		

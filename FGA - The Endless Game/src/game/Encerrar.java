@@ -3,14 +3,12 @@ package game;
 import jplay.GameImage;
 import jplay.Window;
 
-public class Encerrar {
-	
-	private Window encerrarWindow;
+public class Encerrar extends Scenario {
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA1.jpeg"));
 	
 	public Encerrar(Window window){
-		encerrarWindow = window;
+	this.window = window;
 		
 		runBackground0();
 		runBackground1();
@@ -31,7 +29,7 @@ public class Encerrar {
 			
 			background0.draw();
 		
-			encerrarWindow.update();
+			window.update();
 			control++;
 			if(control>2000)
 				break;
@@ -49,7 +47,7 @@ public class Encerrar {
 			background.draw();
 			background1.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control1++;
 			if(control1>2000)
 				break;
@@ -66,7 +64,7 @@ public class Encerrar {
 			background.draw();
 			background2.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control2++;
 			if(control2>5000)
 				break;
@@ -83,7 +81,7 @@ public class Encerrar {
 			background.draw();
 			background3.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control3++;
 			if(control3>4000)
 				break;
@@ -100,7 +98,7 @@ public class Encerrar {
 			background.draw();
 			background4.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control4++;
 			if(control4>4000)
 				break;
@@ -115,7 +113,7 @@ public class Encerrar {
 			background.draw();
 			background5.draw();
 			
-			encerrarWindow.update();
+			window.update();
 		}
 	}
 
