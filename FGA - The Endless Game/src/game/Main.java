@@ -11,13 +11,14 @@ public class Main {
 		MainMenu startMenu = new MainMenu(gameWindow, "StartMenu");
 		Encerrar finishScene = new Encerrar(gameWindow, "FinishScene");
 		Introduction introScene = new Introduction(gameWindow, "IntroductionScene");
-		//Cenario1 cenario1 = new Cenario1(gameWindow, "Cenario1");
+		Cenario1 cenario1 = new Cenario1(gameWindow, "Cenario1");
 		
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(finishScene);
 		levelStateMachine.addScenario(introScene);
+		levelStateMachine.addScenario(cenario1);
 		
-		levelStateMachine.run("IntroductionScene");
+		levelStateMachine.run("StartMenu");
 		
 	}
 	

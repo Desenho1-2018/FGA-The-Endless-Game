@@ -13,7 +13,7 @@ public class Cenario1 extends Scenario {
 		
 		this.window = gameWindow;
 		this.scenarioName = name;
-		jogador = new Jogador(640, 350);
+		jogador = new Jogador(640, 350, window);
 		wall = new GameObject(630,340);
 		npc = new NPC(300,300);
 	}

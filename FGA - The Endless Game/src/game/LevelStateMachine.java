@@ -39,5 +39,7 @@ public class LevelStateMachine {
 			
 		}
 		
+		System.out.println("SCENARIO NOT FOUND!");
+		
 	}
 }
