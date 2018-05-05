@@ -1,7 +1,6 @@
 package game;
 
 import jplay.GameImage;
-//import jplay.Scene;
 import jplay.Window;
 
 public class Cenario1 {
