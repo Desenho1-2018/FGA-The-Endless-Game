@@ -3,14 +3,18 @@ package game;
 import jplay.GameImage;
 import jplay.Window;
 
-public class Encerrar {
-	
-	private Window encerrarWindow;
+public class Encerrar extends Scenario {
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA1.jpeg"));
 	
-	public Encerrar(Window window){
-		encerrarWindow = window;
+	public Encerrar(Window gameWindow, String name){
+	this.window = gameWindow;
+	this.scenarioName = name;
+	}
+
+	
+	@Override
+	public String run() {
 		
 		runBackground0();
 		runBackground1();
@@ -18,8 +22,11 @@ public class Encerrar {
 		runBackground3();
 		runBackground4();
 		runBackground5();
+	
+		return "StartMenu";
+		
 	}
-
+	
 	private void runBackground0(){
 		
 		int control = 0;
@@ -31,7 +38,7 @@ public class Encerrar {
 			
 			background0.draw();
 		
-			encerrarWindow.update();
+			window.update();
 			control++;
 			if(control>2000)
 				break;
@@ -49,7 +56,7 @@ public class Encerrar {
 			background.draw();
 			background1.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control1++;
 			if(control1>2000)
 				break;
@@ -66,7 +73,7 @@ public class Encerrar {
 			background.draw();
 			background2.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control2++;
 			if(control2>5000)
 				break;
@@ -83,7 +90,7 @@ public class Encerrar {
 			background.draw();
 			background3.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control3++;
 			if(control3>4000)
 				break;
@@ -100,7 +107,7 @@ public class Encerrar {
 			background.draw();
 			background4.draw();
 			
-			encerrarWindow.update();
+			window.update();
 			control4++;
 			if(control4>4000)
 				break;
@@ -109,13 +116,18 @@ public class Encerrar {
 	
 	private void runBackground5(){
 		
+		int control5 = 0;
+		
 		GameImage background5 = new GameImage(("src/recursos/sprite/Encerrar5.png"));
 		
 		while(true){
 			background.draw();
 			background5.draw();
 			
-			encerrarWindow.update();
+			window.update();
+			control5++;
+			if(control5>4000)
+				break;
 		}
 	}
 
