@@ -5,6 +5,7 @@ import jplay.Sprite;
 public class GameObject extends Sprite{
 	
 	private String gameObjectName = "";
+	@SuppressWarnings("unused")
 	private String spritePath = "";
 	
 	public GameObject(int x, int y, String spritePath){

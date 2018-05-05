@@ -19,7 +19,7 @@ public class Cenario1 extends Scenario {
 	}
 
 	@Override 
-	public String run(){
+	public String runScenario(){
 		
 		this.drawLevel();
 		return "NEXT_LEVEL";
