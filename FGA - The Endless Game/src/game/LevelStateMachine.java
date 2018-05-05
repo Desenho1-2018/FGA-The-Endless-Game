@@ -32,7 +32,7 @@ public class LevelStateMachine {
 			
 			if(sceneName == scene.getScenarioName()) {
 				
-				this.actualScene = scene.run();
+				this.actualScene = scene.runScenario();
 				this.run(actualScene);
 			
 			}
