@@ -17,7 +17,8 @@ public class Main {
 			janela.update();
 			
 			if(teclado.keyDown(Keyboard.ENTER_KEY)){
-				new Cenario1(janela); //chamando cenario passando a janela como parametro
+				//new Cenario1(janela); //chamando cenario passando a janela como parametro
+				new MainMenu(janela);
 				
 			}
 			
