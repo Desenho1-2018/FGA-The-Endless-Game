@@ -15,7 +15,13 @@ public class Battle extends Scenario {
 	  this.scenarioName = name;
 	
 	}
-
+	
+	@Override
+	public String getScenarioName() {
+		
+		return this.scenarioName;
+	}
+	
 	@Override
 	public String runScenario() {
 		
@@ -25,7 +31,7 @@ public class Battle extends Scenario {
 	
 	}
 	
-public void drawScenario() {
+    public void drawScenario() {
 		
 		GameImage backgroundBattle = new GameImage(("src/recursos/sprite/UnbGama.png"));
 		Sprite professor = new Sprite("src/recursos/sprite/professor.png");
@@ -54,7 +60,26 @@ public void drawScenario() {
 			collision(answer, professor, student, note);
 			window.update();
 		}
-	}
+    }
 	
+    public void collision(boolean answer, Sprite professor, Sprite student, Sprite note){
+	
+	  Sprite wrong = new Sprite("src/recursos/sprite/errou.png");
+	  Sprite correct = new Sprite("src/recursos/sprite/acertou.png");
+	
+	  wrong.x = 400;
+	  wrong.y = 400;
+	  correct.x = 400;
+	  correct.y = 400;
+	
+	  if(answer == true){
+		note.moveTo(professor.x, professor.y, 0.3);
+		correct.draw();
+	  } else{
+		  note.moveTo(student.x, student.y, 0.3);
+		  wrong.draw();
+	  }
+    }
+
 }
 
