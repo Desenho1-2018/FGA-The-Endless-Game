@@ -3,38 +3,44 @@ package game;
 import jplay.GameImage;
 import jplay.Window;
 
-public class Cenario1 {
+public class Cenario1 extends Scenario {
 	
-	private Window janela;
-	//private Scene  cena;
 	private Jogador jogador;
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
-	private GameObject wall;
 	private NPC npc;
-	public Cenario1(Window window){
+	private Scenario cena;
+	private GameObject parede;
+	public Cenario1(Window gameWindow, String name){
 		
-		janela = window;
-		//cena = new Scene();
-		//cena.loadFromFile(URL.scenario("Cenario1.scn")); //carregando o arquivo com o mapa
-		jogador = new Jogador(640, 350);
-		wall = new GameObject(630,340);
+		this.window = gameWindow;
+		this.scenarioName = name;
+		jogador = new Jogador(640, 350, window);
 		npc = new NPC(300,300);
-		run();
+		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png");
 	}
 
-	private void run(){
+	@Override 
+	public String runScenario(){
 		
+		this.drawLevel();
+		return "NEXT_LEVEL";
+	}
+	
+	private void drawLevel() {
 		while(true){
-			//cena.draw();
+
 			backGround.draw();
 			jogador.draw();
 			npc.perseguir(jogador.x, jogador.y);
 			npc.draw();
-			wall.draw();
-			jogador.mover(janela);
-			janela.update();
+			parede.draw();
 			
-		}
-		
+			jogador.caminho(cena , parede);
+			npc.caminho(cena,parede);
+			jogador.mover(window);
+			parede.update();
+			window.update();
+			
+		}		
 	}
 }

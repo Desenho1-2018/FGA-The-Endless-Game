@@ -1,28 +1,27 @@
 package game;
 
-import jplay.GameImage;
-import jplay.Keyboard;
-import jplay.URL;
 import jplay.Window;
 
 public class Main {
 	
 	public static void main(String[] args){
-		Window janela = new Window(800, 600);
-		GameImage plano = new GameImage(("src//recursos//sprite//menu2.png"));
-		Keyboard teclado = janela.getKeyboard();
+		Window gameWindow = new Window(800, 600);
+		LevelStateMachine levelStateMachine = new LevelStateMachine();
 		
-		while(true){ 
-			plano.draw();
-			janela.update();
-			
-			if(teclado.keyDown(Keyboard.ENTER_KEY)){
-				//new Cenario1(janela); //chamando cenario passando a janela como parametro
-				new MainMenu(janela);
-				
-			}
-			
-		}
+		MainMenu startMenu = new MainMenu(gameWindow, "StartMenu");
+		Encerrar finishScene = new Encerrar(gameWindow, "FinishScene");
+		Introduction introScene = new Introduction(gameWindow, "IntroductionScene");
+		Battle battleScene = new Battle(gameWindow, "BattleScene");
+		Cenario1 cenario1 = new Cenario1(gameWindow, "Cenario1");
+		
+		levelStateMachine.addScenario(startMenu);
+		levelStateMachine.addScenario(finishScene);
+		levelStateMachine.addScenario(introScene);
+		levelStateMachine.addScenario(battleScene);
+		levelStateMachine.addScenario(cenario1);
+		
+		levelStateMachine.run("StartMenu");
+		
 	}
 	
 }
