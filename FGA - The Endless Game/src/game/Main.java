@@ -20,7 +20,7 @@ public class Main {
 		levelStateMachine.addScenario(battle);
 		levelStateMachine.addScenario(cenario1);
 		
-		levelStateMachine.run("BattleScene");
+		levelStateMachine.run("MainMenu");
 		
 	}
 	
