@@ -18,7 +18,7 @@ public class Main {
 		levelStateMachine.addScenario(introScene);
 		levelStateMachine.addScenario(cenario1);
 		
-		levelStateMachine.run("StartMenu");
+		levelStateMachine.run("IntroductionScene");
 		
 	}
 	
