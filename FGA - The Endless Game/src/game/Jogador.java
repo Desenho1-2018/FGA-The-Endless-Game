@@ -5,7 +5,7 @@ import jplay.Window;
 
 public class Jogador extends CharacterParent{
 
-	private double velocidade = 0.9;
+	private double velocidade = 0.3;
 	private int direcao = 3;
 	private Keyboard playerKeyboard;
 	private boolean movendo = false;
