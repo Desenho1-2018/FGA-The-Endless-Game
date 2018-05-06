@@ -1,6 +1,7 @@
 package game;
 
 import jplay.GameImage;
+import jplay.Sprite;
 import jplay.Window;
 
 public class Battle extends Scenario {
@@ -18,7 +19,7 @@ public class Battle extends Scenario {
 	@Override
 	public String runScenario() {
 		
-		runBackground0();
+		drawScenario();
 		
 		return "FinishScene";
 	
@@ -53,26 +54,6 @@ public void drawScenario() {
 			collision(answer, professor, student, note);
 			window.update();
 		}
-	}
-	
-	
-	private void runBackground0(){
-		
-		int control = 0;
-		
-		GameImage background0 = new GameImage(("src/recursos/sprite/BemVindo.png"));
-		
-		while(true){
-			background.draw();
-			
-			background0.draw();
-		
-			window.update();
-			control++;
-			if(control>2000)
-				break;
-		}
-		
 	}
 	
 }
