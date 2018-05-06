@@ -15,7 +15,7 @@ public class Introduction extends Scenario {
 
 	
 	@Override
-	public String run() {
+	public String runScenario() {
 		
 		runBackground0();
 		runBackground1();
