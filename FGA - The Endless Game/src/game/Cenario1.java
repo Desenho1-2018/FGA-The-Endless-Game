@@ -5,7 +5,7 @@ import jplay.Window;
 
 public class Cenario1 extends Scenario {
 	
-	private Jogador jogador;
+	private Player jogador;
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
 	private NPC npc;
 	private Scenario cena;
@@ -14,7 +14,7 @@ public class Cenario1 extends Scenario {
 		
 		this.window = gameWindow;
 		this.scenarioName = name;
-		jogador = new Jogador(640, 350, window);
+		jogador = new Player(640, 350, window);
 		npc = new NPC(300,300);
 		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png");
 	}
