@@ -35,8 +35,8 @@ public class MainMenu extends Scenario {
 		
 			drawObjects();
 	
-			//Arrow não esta na lista de objetos por ser um objeto especifico com movimento.
-			//fica como TO DO o que fazer para generalizar objetos desse tipo também.
+			//Arrow nï¿½o esta na lista de objetos por ser um objeto especifico com movimento.
+			//fica como TO DO o que fazer para generalizar objetos desse tipo tambï¿½m.
 			arrow.draw();
 			moveArrow();
 			selectOption();
@@ -101,7 +101,7 @@ public class MainMenu extends Scenario {
 		if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
 
 			if(option == 0) {
-				nextScenario = "Cenario1";
+				nextScenario = "IntroductionScene";
 			} else if (option == 1) {
 				nextScenario = "FinishScene";
 			}

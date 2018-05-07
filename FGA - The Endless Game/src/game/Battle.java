@@ -48,7 +48,7 @@ public class Battle extends Scenario {
 		note.x = 350;
 		note.y = 500;
 		
-		boolean answer = false;
+		boolean answer = true;
 		
 		while(true){
 			backgroundBattle.draw();
