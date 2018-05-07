@@ -1,18 +1,21 @@
 package game;
 
 import jplay.GameImage;
-import jplay.Parallax;
-import jplay.ParallaxLayers;
 import jplay.Window;
 
-public class Introduction {
-	
-	private Window introductionWindow;
+public class Introduction extends Scenario {
+
 	
 	GameImage background = new GameImage(("src/recursos/sprite/FGA.jpeg"));
 	
-	public Introduction(Window window){
-		introductionWindow = window;
+	public Introduction(Window gameWindow, String name){
+	  this.window = gameWindow;
+	  this.scenarioName = name;
+	}
+
+	
+	@Override
+	public String runScenario() {
 		
 		runBackground0();
 		runBackground1();
@@ -20,8 +23,10 @@ public class Introduction {
 		runBackground3();
 		runBackground4();
 		runBackground5();
+		
+		return "Cenario1";
+	
 	}
-
 	private void runBackground0(){
 		
 		int control = 0;
@@ -33,7 +38,7 @@ public class Introduction {
 			
 			background0.draw();
 		
-			introductionWindow.update();
+			window.update();
 			control++;
 			if(control>2000)
 				break;
@@ -51,7 +56,7 @@ public class Introduction {
 			background.draw();
 			background1.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control1++;
 			if(control1>3300)
 				break;
@@ -68,7 +73,7 @@ public class Introduction {
 			background.draw();
 			background2.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control2++;
 			if(control2>3300)
 				break;
@@ -85,7 +90,7 @@ public class Introduction {
 			background.draw();
 			background3.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control3++;
 			if(control3>3300)
 				break;
@@ -102,7 +107,7 @@ public class Introduction {
 			background.draw();
 			background4.draw();
 			
-			introductionWindow.update();
+			window.update();
 			control4++;
 			if(control4>3300)
 				break;
@@ -111,14 +116,20 @@ public class Introduction {
 	
 	private void runBackground5(){
 		
+		int control5 = 0;
+		
 		GameImage background5 = new GameImage(("src/recursos/sprite/Intro5.png"));
 		
 		while(true){
 			background.draw();
 			background5.draw();
 			
-			introductionWindow.update();
+			window.update();
+			control5++;
+			if(control5>3300)
+				break;
 		}
+		
 	}
 	
 }
