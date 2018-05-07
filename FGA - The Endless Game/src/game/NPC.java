@@ -1,16 +1,19 @@
 package game;
 
-public class NPC extends CharacterParent{
-
+public class NPC extends CharacterParent implements NPCPlan{
+	
+	private int pontosVida;
+	private int danoCausado;
+	
 	public NPC(int x, int y) {
 		super(("src//recursos//sprite//zumbi.png"), 16); 
 		this.x = x;
 		this.y = y;
 		this.setTotalDuration(2000);
 		this.velocidade = 0.1;
-		
 	
 	}
+	
 	public void perseguir(double x, double y){
 		
 		double range = 50;
@@ -54,6 +57,32 @@ public class NPC extends CharacterParent{
 		update();
 		movendo = false;
 		}
+	}
+	
+	public void setInimigoPontosVida(int pontosVida) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setInimigoDanoCausado(int danoCausado) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int getDanoCausado() {
+		return danoCausado;
+	}
+	
+	public void setDanoCausado(int danoCausado) {
+		this.danoCausado = danoCausado;
+	}
+	
+	public int getPontosVida() {
+		return pontosVida;
+	}
+	
+	public void setPontosVida(int pontosVida) {
+		this.pontosVida = pontosVida;
 	}
 	
 }
