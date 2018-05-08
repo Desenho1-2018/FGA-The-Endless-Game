@@ -3,7 +3,7 @@ package game;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class Player extends CharacterParent{
+public class Player extends GameObject{
 
 	private double speed = 0.3;
 	private int direction = 3;
@@ -14,9 +14,9 @@ public class Player extends CharacterParent{
 	
 	
 	
-	private Player(int x, int y, Window gameWindow) { // parameters that set the player initial location
+	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
 		
-		super(("src//recursos//sprite//jogador2.png"), 20); // img and frame number
+		super(x, y, spritePath, spriteDivision); // img and frame number
 		this.x = x; // setting the x and y to the passed cordinates
 		this.y = y;
 		this.setTotalDuration(2000); //millisecconds
@@ -87,11 +87,11 @@ public class Player extends CharacterParent{
 	
 	
 	//metodo singleton
-	public static Player getPlayerInstance(int posX, int posY, Window gameWindow) {
+	public static Player getPlayerInstance(int posX, int posY, String spritePath,  int spriteDivision, Window gameWindow){
 		
 		if(instancePlayer == null) {
 			
-			instancePlayer = new Player(posX, posY, gameWindow);
+			instancePlayer = new Player(posX, posY, spritePath, spriteDivision, gameWindow);
 			return instancePlayer;
 		} else {
 			instancePlayer.x = posX;
