@@ -21,7 +21,6 @@ public class Question extends Scenario {
 		GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png");
 		GameObject mirando = new GameObject(300, 400, "src//recursos//sprite//mirando.png");
 		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png");
-		initializeKeyboard();
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
@@ -58,14 +57,15 @@ public class Question extends Scenario {
 		} else {
 			System.out.println("The keyboard needs a window to run. The window cannot be null");
 		}
-		sceneKeyboard.setBehavior(Keyboard.DOWN_KEY, Keyboard.DETECT_EVERY_PRESS); 
-		sceneKeyboard.setBehavior(Keyboard.UP_KEY, Keyboard.DETECT_EVERY_PRESS); 
+		sceneKeyboard.setBehavior(Keyboard.DOWN_KEY, Keyboard.DETECT_INITIAL_PRESS_ONLY); 
+		sceneKeyboard.setBehavior(Keyboard.UP_KEY, Keyboard.DETECT_INITIAL_PRESS_ONLY); 
 		sceneKeyboard.setBehavior(Keyboard.ENTER_KEY, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 	
 	}
 	
 	public String runScenario() {
 	
+		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
 		return nextScenario;
@@ -75,31 +75,32 @@ public class Question extends Scenario {
 	
 	private void moveArrow() {
 		
-		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY) && arrow.y == 300) {
-			System.out.println("Valor1: " + arrow.y);
-				arrow.y = arrow.y + 50;
-				option = 1;
+		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
+				if(option < 2 )
+					option = option + 1;
 				
+		}	
+		else if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
+			 if(option > 0)
+				 option = option - 1;
+		}
+
+		switch (option) {
+		case 0:
+			arrow.y = 300;
+			break;
+		case 1:
+			arrow.y = 350;
+			break;
+		case 2:
+			arrow.y = 400;
+			break;
+		default:
+			//do nothing
+			break;
 		}
 		
-		else if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY) && arrow.y == 350) {
-			System.out.println("Valor2: " + arrow.y);
-			arrow.y = arrow.y + 50;
-			option = 0;
-			
-	    }
 		
-		else if(sceneKeyboard.keyDown(Keyboard.UP_KEY) && arrow.y == 350) {
-			 System.out.println("Valor3: " + arrow.y);
-			 arrow.y = arrow.y - 50;
-			 option = 0;
-		}
-		
-		else if(sceneKeyboard.keyDown(Keyboard.UP_KEY) && arrow.y == 400) {
-			 System.out.println("Valor4: " + arrow.y);
-			 arrow.y = arrow.y - 50;
-			 option = 0;
-		}
 		
 	}
 	

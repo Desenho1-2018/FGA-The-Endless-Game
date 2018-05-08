@@ -20,7 +20,6 @@ public class MainMenu extends Scenario {
 		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png");
 		GameObject passworld_button = new GameObject(308, 350, "src//recursos//sprite//passworld_button.png");
 		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png");
-		initializeKeyboard();
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
@@ -63,7 +62,8 @@ public class MainMenu extends Scenario {
 	}
 	
 	public String runScenario() {
-	
+		
+		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
 		return nextScenario;
