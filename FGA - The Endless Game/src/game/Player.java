@@ -5,11 +5,13 @@ import jplay.Window;
 
 public class Player extends CharacterParent{
 
-	private double velocidade = 0.3;
-	private int direcao = 3;
+	private double speed = 0.3;
+	private int direction = 3;
 	private Keyboard playerKeyboard;
-	private boolean movendo = false;
+	private boolean isMoving = false;
 	private static Player instancePlayer = null;
+	
+	
 	
 	
 	private Player(int x, int y, Window gameWindow) { // parameters that set the player initial location
@@ -22,7 +24,7 @@ public class Player extends CharacterParent{
 		
 	}
 	
-	public void mover(Window janela){ //public because it's being acessed in the scenario
+	public void move(Window janela){ //public because it's being acessed in the scenario
 		if(playerKeyboard == null){
 			playerKeyboard = janela.getKeyboard(); // se nao tiver teclado adicionar um
 			
@@ -30,42 +32,42 @@ public class Player extends CharacterParent{
 		
 		if(playerKeyboard.keyDown(Keyboard.LEFT_KEY)){
 			if(this.x >0){
-				this.x -= velocidade; //evitando o jogador sair da tela
+				this.x -= speed; //evitando o jogador sair da tela
 			}
-			if(direcao !=1){
+			if(direction !=1){
 				setSequence(4,8); // definindo sprites esquerda
-				direcao =1 ;
-			} movendo = true;
+				direction =1 ;
+			} isMoving = true;
 		}else if(playerKeyboard.keyDown(Keyboard.RIGHT_KEY)){
 			if(this.x < janela.getWidth() - 60 ){ // 60 pixeis do jogador
-				this.x += velocidade; //evitando o jogador sair da tela
+				this.x += speed; //evitando o jogador sair da tela
 			}
-			if(direcao !=2){
+			if(direction !=2){
 				setSequence(8,12); // definindo sprites direita
-				direcao =2 ;
-			} movendo = true;
+				direction =2 ;
+			} isMoving = true;
 		}else if(playerKeyboard.keyDown(Keyboard.UP_KEY)){
 			
 			if(this.y >0){
-				this.y -= velocidade; //evitando o jogador sair da tela
+				this.y -= speed; //evitando o jogador sair da tela
 			}
-			if(direcao !=4){
+			if(direction !=4){
 				setSequence(12,16); // definindo sprites subindo
-				direcao = 4 ;
-			} movendo = true;
+				direction = 4 ;
+			} isMoving = true;
 		}else if(playerKeyboard.keyDown(Keyboard.DOWN_KEY)){
 			if(this.y < janela.getHeight() - 60){
-				this.y += velocidade; //evitando o jogador sair da tela
+				this.y += speed; //evitando o jogador sair da tela
 			}
-			if(direcao !=5){
+			if(direction !=5){
 				setSequence(0,4); // definindo sprites descendo
-				direcao =5 ;
-			} movendo = true;
+				direction =5 ;
+			} isMoving = true;
 			
 		}
-		if(movendo == true){
+		if(isMoving == true){
 			update(); //updating the sprites
-			movendo = false;
+			isMoving = false;
 		}
 	}
 

@@ -39,7 +39,7 @@ public class Level1 extends Level {
 
 			player.caminho(cena , parede);
 			npc.caminho(cena,parede);
-			player.mover(window);
+			player.move(window);
 			parede.update();
 			window.update();
 
