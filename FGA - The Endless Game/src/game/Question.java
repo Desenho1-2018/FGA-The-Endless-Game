@@ -17,18 +17,18 @@ public class Question extends Scenario {
 		window = gameWindow;
 		scenarioName = name;
 		background = new GameImage("src//recursos//sprite//lousa.jpeg");
+
 		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
 		GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png", 1, GameObjectType.OTHER);
 		GameObject mirando = new GameObject(300, 400, "src//recursos//sprite//mirando.png", 1, GameObjectType.OTHER);
 		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
-		
+
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
 		this.addSceneObjects(mirando);
-	
+		
 	}
 	
-
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
 		
@@ -42,10 +42,7 @@ public class Question extends Scenario {
 			moveArrow();
 			selectOption();
 			
-			
-			window.update();
-		
-		
+			window.update();	
 		}
 		
 	}
@@ -76,7 +73,7 @@ public class Question extends Scenario {
 	private void moveArrow() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
-				if(option < 2 )
+				if(option < 3 )
 					option = option + 1;
 				
 		}	
@@ -86,25 +83,25 @@ public class Question extends Scenario {
 		}
 
 		switch (option) {
-		case 0:
+		  case 0:
 			arrow.y = 300;
-			break;
-		case 1:
+			 break;
+		  case 1:
 			arrow.y = 350;
-			break;
-		case 2:
+			 break;
+		  case 2:
 			arrow.y = 400;
-			break;
-		default:
+			 break;
+		  case 3:
+			arrow.y = 450;
+			  break;
+		  default:
 			//do nothing
 			break;
 		}
 		
-		
-		
 	}
-	
-	
+		
 	private void selectOption() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
@@ -117,7 +114,6 @@ public class Question extends Scenario {
 			
 		}
 		
-
 	}
 	
 }
