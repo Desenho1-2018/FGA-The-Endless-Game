@@ -17,18 +17,21 @@ public class Question extends Scenario {
 		window = gameWindow;
 		scenarioName = name;
 		background = new GameImage("src//recursos//sprite//lousa.jpeg");
-		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png");
-		GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png");
-		GameObject mirando = new GameObject(300, 400, "src//recursos//sprite//mirando.png");
-		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png");
+		GameObject enunciado = new GameObject(50, 50, "src//recursos//sprite//question//calculo1.jpeg");
+		GameObject start_button = new GameObject(100, 300, "src//recursos//sprite//iniciar_button.png");
+		GameObject passworld_button = new GameObject(100, 350, "src//recursos//sprite//passworld_button.png");
+		GameObject mirando = new GameObject(100, 400, "src//recursos//sprite//iniciar_button.png");
+		GameObject mirando2 = new GameObject(100, 450, "src//recursos//sprite//passworld_button.png");
+		arrow = new GameObject(50, 300, "src//recursos//sprite//arrow_button.png");
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
 		this.addSceneObjects(mirando);
-	
+		this.addSceneObjects(mirando2);
+		this.addSceneObjects(enunciado);
+		
 	}
 	
-
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
 		
@@ -42,10 +45,7 @@ public class Question extends Scenario {
 			moveArrow();
 			selectOption();
 			
-			
-			window.update();
-		
-		
+			window.update();	
 		}
 		
 	}
@@ -76,7 +76,7 @@ public class Question extends Scenario {
 	private void moveArrow() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
-				if(option < 2 )
+				if(option < 3 )
 					option = option + 1;
 				
 		}	
@@ -86,25 +86,25 @@ public class Question extends Scenario {
 		}
 
 		switch (option) {
-		case 0:
+		  case 0:
 			arrow.y = 300;
-			break;
-		case 1:
+			 break;
+		  case 1:
 			arrow.y = 350;
-			break;
-		case 2:
+			 break;
+		  case 2:
 			arrow.y = 400;
-			break;
-		default:
+			 break;
+		  case 3:
+			arrow.y = 450;
+			  break;
+		  default:
 			//do nothing
 			break;
 		}
 		
-		
-		
 	}
-	
-	
+		
 	private void selectOption() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
@@ -117,7 +117,6 @@ public class Question extends Scenario {
 			
 		}
 		
-
 	}
 	
 }
