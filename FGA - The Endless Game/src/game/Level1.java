@@ -33,7 +33,7 @@ public class Level1 extends Scenario {
 
 			backGround.draw();
 			player.draw();
-			npc.perseguir(player.x, player.y);
+			//npc.perseguir(player.x, player.y);
 			npc.draw();
 			parede.draw();
 

@@ -31,7 +31,7 @@ public class Question extends Scenario {
 		this.addSceneObjects(enunciado);
 		
 	}
-	
+
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
 		
@@ -79,8 +79,7 @@ public class Question extends Scenario {
 				if(option < 3 )
 					option = option + 1;
 				
-		}	
-		else if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
+		} else if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
 			 if(option > 0)
 				 option = option - 1;
 		}
@@ -106,17 +105,22 @@ public class Question extends Scenario {
 	}
 		
 	private void selectOption() {
-		
+	
 		if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
-
 			if(option == 0) {
-				nextScenario = "IntroductionScene";
+				new Battle(false);
+				nextScenario = "BattleScene";
 			} else if (option == 1) {
-				nextScenario = "FinishScene";
-			}
-			
+				new Battle(true);
+				nextScenario = "BattleScene";
+			  } else if (option == 2) {
+				  new Battle(false);    
+				nextScenario = "BattleScene";
+			  } else if (option == 3) {
+				  new Battle(false);   
+				nextScenario = "BattleScene";
+			  }
 		}
-		
 	}
 	
 }
