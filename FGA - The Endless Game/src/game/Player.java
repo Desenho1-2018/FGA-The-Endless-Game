@@ -3,16 +3,16 @@ package game;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class Jogador extends CharacterParent{
+public class Player extends CharacterParent{
 
-	private double velocidade = 0.9;
+	private double velocidade = 0.3;
 	private int direcao = 3;
 	private Keyboard playerKeyboard;
 	private boolean movendo = false;
 	
 	
 	
-	public Jogador(int x, int y, Window gameWindow) { // parameters that set the player initial location
+	public Player(int x, int y, Window gameWindow) { // parameters that set the player initial location
 		
 		super(("src//recursos//sprite//jogador2.png"), 20); // img and frame number
 		this.x = x; // setting the x and y to the passed cordinates

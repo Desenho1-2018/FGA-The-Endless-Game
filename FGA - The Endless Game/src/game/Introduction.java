@@ -9,8 +9,8 @@ public class Introduction extends Scenario {
 	GameImage background = new GameImage(("src/recursos/sprite/FGA.jpeg"));
 	
 	public Introduction(Window gameWindow, String name){
-	this.window = gameWindow;
-	this.scenarioName = name;
+	  this.window = gameWindow;
+	  this.scenarioName = name;
 	}
 
 	
@@ -24,7 +24,7 @@ public class Introduction extends Scenario {
 		runBackground4();
 		runBackground5();
 		
-		return "FinishScene";
+		return "Cenario1";
 	
 	}
 	private void runBackground0(){
@@ -129,6 +129,7 @@ public class Introduction extends Scenario {
 			if(control5>3300)
 				break;
 		}
+		
 	}
 	
 }
