@@ -16,6 +16,7 @@ public class Level1 extends Level {
 		addPlayer(640, 350, "src//recursos//sprite//jogador2.png", 20, window);
 		npc = new NPC(300,300);
 		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png", 1, GameObjectType.WALL);
+		this.addSceneObjects(parede);
 	}
 
 	@Override
@@ -32,13 +33,16 @@ public class Level1 extends Level {
 
 			backGround.draw();
 			playerInstance.draw();
-			npc.perseguir(playerInstance.x, playerInstance.y);
 			npc.draw();
 			parede.draw();
-
+			
+			
+			playerInstance.setCollisionType(this.playerCollision());
+			npc.perseguir(playerInstance.x, playerInstance.y);
 			//player.caminho(cena , parede);
 			npc.caminho(cena,parede);
 			playerInstance.move(window);
+			
 			parede.update();
 			window.update();
 
