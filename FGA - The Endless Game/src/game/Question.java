@@ -18,16 +18,16 @@ public class Question extends Scenario {
 		scenarioName = name;
 		background = new GameImage("src//recursos//sprite//lousa.jpeg");
 		GameObject enunciado = new GameObject(50, 50, "src//recursos//sprite//question//calculo1.jpeg");
-		GameObject start_button = new GameObject(100, 300, "src//recursos//sprite//iniciar_button.png");
-		GameObject passworld_button = new GameObject(100, 350, "src//recursos//sprite//passworld_button.png");
-		GameObject mirando = new GameObject(100, 400, "src//recursos//sprite//iniciar_button.png");
-		GameObject mirando2 = new GameObject(100, 450, "src//recursos//sprite//passworld_button.png");
-		arrow = new GameObject(50, 300, "src//recursos//sprite//arrow_button.png");
+		GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//0.png");
+		GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//1.png");
+		GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//2.png");
+		GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//3.png");
+		arrow = new GameObject(50, 300, "src//recursos//sprite//arrow_transparente.png");
 		
-		this.addSceneObjects(start_button);
-		this.addSceneObjects(passworld_button);
-		this.addSceneObjects(mirando);
-		this.addSceneObjects(mirando2);
+		this.addSceneObjects(answer0);
+		this.addSceneObjects(answer1);
+		this.addSceneObjects(answer2);
+		this.addSceneObjects(answer3);
 		this.addSceneObjects(enunciado);
 		
 	}
