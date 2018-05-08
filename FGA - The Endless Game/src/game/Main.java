@@ -22,7 +22,7 @@ public class Main {
 		levelStateMachine.addScenario(question);
 		levelStateMachine.addScenario(level1);
 
-		levelStateMachine.run("QuestionScene");
+		levelStateMachine.run("Level1");
 
 	}
 
