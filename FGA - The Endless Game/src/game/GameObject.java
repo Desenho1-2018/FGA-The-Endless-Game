@@ -8,9 +8,9 @@ public class GameObject extends Sprite{
 	@SuppressWarnings("unused")
 	private String spritePath = "";
 	
-	public GameObject(int x, int y, String spritePath){
+	public GameObject(int x, int y, String spritePath, int spriteDivision){
 	
-		super((spritePath), 1); // img and frame number
+		super((spritePath), spriteDivision); // img and frame number
 		this.spritePath = spritePath;
 		this.x = x;
 		this.y = y;
