@@ -19,8 +19,5 @@ public abstract class Level extends Scenario {
 	protected void addPlayer(int posX, int posY, String spritePath,  int spriteDivision, Window gameWindow){
 		this.playerInstance = Player.getPlayerInstance(posX, posY, spritePath, spriteDivision, gameWindow);
 	}
-	
-	protected void colissionWithPlayer() {}
-	
 
 }

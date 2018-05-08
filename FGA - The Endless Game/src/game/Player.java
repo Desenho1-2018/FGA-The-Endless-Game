@@ -16,7 +16,7 @@ public class Player extends GameObject{
 	
 	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
 		
-		super(x, y, spritePath, spriteDivision); // img and frame number
+		super(x, y, spritePath, spriteDivision, GameObjectType.PLAYER); // img and frame number
 		this.x = x; // setting the x and y to the passed cordinates
 		this.y = y;
 		this.setTotalDuration(2000); //millisecconds

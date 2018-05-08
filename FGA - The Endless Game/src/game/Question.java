@@ -17,10 +17,10 @@ public class Question extends Scenario {
 		window = gameWindow;
 		scenarioName = name;
 		background = new GameImage("src//recursos//sprite//lousa.jpeg");
-		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1);
-		GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png", 1);
-		GameObject mirando = new GameObject(300, 400, "src//recursos//sprite//mirando.png", 1);
-		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1);
+		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
+		GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png", 1, GameObjectType.OTHER);
+		GameObject mirando = new GameObject(300, 400, "src//recursos//sprite//mirando.png", 1, GameObjectType.OTHER);
+		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
