@@ -1,5 +1,7 @@
 package game;
 
+import jplay.Window;
+
 public abstract class Level extends Scenario {
 	
 	/**
@@ -10,10 +12,14 @@ public abstract class Level extends Scenario {
 	
 	
 	//Player
-	protected Player gamer = null;
+	protected Player playerInstance = null;
 	
 	
 	//Metodos
+	protected void addPlayer(int posX, int posY, Window gameWindow) {
+		this.playerInstance = Player.getPlayerInstance(posX, posY, gameWindow);
+	}
+	
 	protected void colissionWithPlayer() {}
 	
 
