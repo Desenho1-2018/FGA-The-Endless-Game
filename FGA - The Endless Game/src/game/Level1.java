@@ -5,7 +5,6 @@ import jplay.Window;
 
 public class Level1 extends Level {
 
-	private Player player;
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
 	private NPC npc;
 	private Scenario cena;
@@ -14,9 +13,10 @@ public class Level1 extends Level {
 
 		this.window = gameWindow;
 		this.scenarioName = name;
-		player = Player.getPlayerInstance(640, 350, window);
+		addPlayer(640, 350, "src//recursos//sprite//jogador2.png", 20, window);
 		npc = new NPC(300,300);
-		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png");
+		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png", 1, GameObjectType.WALL);
+		this.addSceneObjects(parede);
 	}
 
 	@Override
@@ -32,14 +32,17 @@ public class Level1 extends Level {
 		while(true){
 
 			backGround.draw();
-			player.draw();
-			npc.perseguir(player.x, player.y);
+			playerInstance.draw();
 			npc.draw();
 			parede.draw();
-
-			player.caminho(cena , parede);
+			
+			
+			playerInstance.setCollisionType(this.playerCollision());
+			npc.perseguir(playerInstance.x, playerInstance.y);
+			//player.caminho(cena , parede);
 			npc.caminho(cena,parede);
-			player.mover(window);
+			playerInstance.move(window);
+			
 			parede.update();
 			window.update();
 
