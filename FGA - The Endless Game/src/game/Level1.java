@@ -3,7 +3,7 @@ package game;
 import jplay.GameImage;
 import jplay.Window;
 
-public class Level1 extends Scenario {
+public class Level1 extends Level {
 
 	private Player player;
 	GameImage backGround = new GameImage("src//recursos//tiles//background_default.png");
@@ -14,7 +14,7 @@ public class Level1 extends Scenario {
 
 		this.window = gameWindow;
 		this.scenarioName = name;
-		player = new Player(640, 350, window);
+		player = Player.getPlayerInstance(640, 350, window);
 		npc = new NPC(300,300);
 		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png");
 	}

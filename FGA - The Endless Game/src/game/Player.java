@@ -9,10 +9,10 @@ public class Player extends CharacterParent{
 	private int direcao = 3;
 	private Keyboard playerKeyboard;
 	private boolean movendo = false;
+	private static Player instancePlayer = null;
 	
 	
-	
-	public Player(int x, int y, Window gameWindow) { // parameters that set the player initial location
+	private Player(int x, int y, Window gameWindow) { // parameters that set the player initial location
 		
 		super(("src//recursos//sprite//jogador2.png"), 20); // img and frame number
 		this.x = x; // setting the x and y to the passed cordinates
@@ -82,5 +82,23 @@ public class Player extends CharacterParent{
 		playerKeyboard.setBehavior(Keyboard.RIGHT_KEY, Keyboard.DETECT_EVERY_PRESS);
 	
 	}
+	
+	
+	//metodo singleton
+	public static Player getPlayerInstance(int posX, int posY, Window gameWindow) {
+		
+		if(instancePlayer == null) {
+			
+			instancePlayer = new Player(posX, posY, gameWindow);
+			return instancePlayer;
+		} else {
+			instancePlayer.x = posX;
+			instancePlayer.y = posY;
+			return instancePlayer;
+			
+		}
+		
+	}
+
 	
 }
