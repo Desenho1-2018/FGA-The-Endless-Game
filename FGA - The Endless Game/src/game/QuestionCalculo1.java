@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class Question extends Scenario {
+public class QuestionCalculo1 extends Scenario {
 
 	private GameObject arrow = null;
 	private int option = 0;
@@ -13,7 +13,7 @@ public class Question extends Scenario {
 	
 	//Constroi a cena e
 	//adiciona objetos na cena
-	public Question(Window gameWindow, String name, int numberQuestion) {
+	public QuestionCalculo1(Window gameWindow, String name, int numberQuestion) {
 	
 		window = gameWindow;
 		scenarioName = name;
@@ -35,7 +35,21 @@ public class Question extends Scenario {
 			this.addSceneObjects(limit);	
 		}
 		
-		if(numberQuestion == 2){
+		else if(numberQuestion == 2){
+			GameObject derivada = new GameObject(50, 50, "src//recursos//sprite//question//derivada.jpeg");
+			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//d3.png");
+			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//d2.png");
+			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//d1.png");
+			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//d4.png");
+			
+			this.addSceneObjects(answer0);
+			this.addSceneObjects(answer1);
+			this.addSceneObjects(answer2);
+			this.addSceneObjects(answer3);
+			this.addSceneObjects(derivada);	
+		}
+		
+		else if(numberQuestion == 3){
 			GameObject integral = new GameObject(50, 50, "src//recursos//sprite//question//integral.jpeg");
 			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//0.png");
 			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//1.png");
@@ -48,7 +62,6 @@ public class Question extends Scenario {
 			this.addSceneObjects(answer3);
 			this.addSceneObjects(integral);	
 		}
-	
 		
 	}
 
@@ -92,7 +105,6 @@ public class Question extends Scenario {
 		
 	}
 
-	
 	private void moveArrow() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
@@ -154,11 +166,11 @@ public class Question extends Scenario {
 				nextScenario = "BattleScene";
 			  break;
 			  case 1:
-				new Battle(true);
+				new Battle(false);
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
-				new Battle(false);    
+				new Battle(true);    
 				nextScenario = "BattleScene";
 			  break;
 			  case 3:
@@ -167,6 +179,26 @@ public class Question extends Scenario {
 			  break;	
 			}  
 		  }
+		  else if(numberQuestion == 3){
+			switch(option){
+			 case 0: 
+			   new Battle(false);
+			   nextScenario = "BattleScene";
+			 break;
+			 case 1:
+			   new Battle(true);
+			   nextScenario = "BattleScene";
+			 break;	
+			 case 2:
+			   new Battle(false);    
+			   nextScenario = "BattleScene";
+			 break;
+			 case 3:
+			   new Battle(false);   
+			   nextScenario = "BattleScene";
+			  break;	
+				}  
+			  }
 		}
 	}
 	
