@@ -14,15 +14,18 @@ public class Main {
 		Battle battle = new Battle(gameWindow, "BattleScene");
 		Question question = new Question(gameWindow, "QuestionScene");
 		Level1 level1 = new Level1(gameWindow, "Level1");
-
+		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
+		
+		
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(finishScene);
 		levelStateMachine.addScenario(introScene);
 		levelStateMachine.addScenario(battle);
 		levelStateMachine.addScenario(question);
 		levelStateMachine.addScenario(level1);
+		levelStateMachine.addScenario(levelTCC);
 
-		levelStateMachine.run("Level1");
+		levelStateMachine.run("LevelTCC");
 
 	}
 
