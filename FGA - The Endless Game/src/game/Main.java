@@ -12,7 +12,9 @@ public class Main {
 		Encerrar finishScene = new Encerrar(gameWindow, "FinishScene");
 		Introduction introScene = new Introduction(gameWindow, "IntroductionScene");
 		Battle battle = new Battle(gameWindow, "BattleScene");
+
 		QuestionCalculo1 questionCalculo1 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene", 1);
+
 		Level1 level1 = new Level1(gameWindow, "Level1");
 
 		levelStateMachine.addScenario(startMenu);
