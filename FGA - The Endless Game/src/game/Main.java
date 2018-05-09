@@ -13,7 +13,6 @@ public class Main {
 		Introduction introScene = new Introduction(gameWindow, "IntroductionScene");
 		Battle battle = new Battle(gameWindow, "BattleScene");
 
-
 		Level1 level1 = new Level1(gameWindow, "Level1");
 
 		levelStateMachine.addScenario(startMenu);
