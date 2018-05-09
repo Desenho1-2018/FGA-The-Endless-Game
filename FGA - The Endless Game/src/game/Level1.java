@@ -15,6 +15,7 @@ public class Level1 extends Level {
 		this.scenarioName = name;
 		addPlayer(640, 350, "src//recursos//sprite//jogador2.png", 20, window);
 		npc = new NPC(300,300);
+		SoundPlayer.play("doido.mid");
 		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png", 1, GameObjectType.WALL);
 		this.addSceneObjects(parede);
 	}
