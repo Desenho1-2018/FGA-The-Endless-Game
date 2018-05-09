@@ -73,10 +73,10 @@ public class Battle extends Scenario {
 	  correct.y = 400;
 	  
 	  if(answer){
-		note.moveTo(professor.x, professor.y+70, 0.3);
+		note.moveTo(professor.x, professor.y+70, 0.5);
 		correct.draw();
 	  } else{
-		  note.moveTo(student.x, student.y+50, 0.3);
+		  note.moveTo(student.x, student.y+50, 0.5);
 		  wrong.draw();
 	  }
     }
