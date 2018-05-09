@@ -24,7 +24,7 @@ public class Introduction extends Scenario {
 		runBackground4();
 		runBackground5();
 		
-		return "Cenario1";
+		return "Level1";
 	
 	}
 	private void runBackground0(){
