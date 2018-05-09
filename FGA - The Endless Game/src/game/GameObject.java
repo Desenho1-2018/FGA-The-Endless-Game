@@ -7,13 +7,15 @@ public class GameObject extends Sprite{
 	private String gameObjectName = "";
 	@SuppressWarnings("unused")
 	private String spritePath = "";
+	private GameObjectType type;
 	
-	public GameObject(int x, int y, String spritePath){
+	public GameObject(int x, int y, String spritePath, int spriteDivision, GameObjectType objtype){
 	
-		super((spritePath), 1); // img and frame number
+		super((spritePath), spriteDivision); // img and frame number
 		this.spritePath = spritePath;
 		this.x = x;
 		this.y = y;
+		this.type = objtype;
 	
 	}
 
@@ -27,6 +29,10 @@ public class GameObject extends Sprite{
 	
 	public void setSpritePath(String path) {
 		spritePath = path;
+	}
+	
+	public GameObjectType getType() {
+		return type;
 	}
 	
 

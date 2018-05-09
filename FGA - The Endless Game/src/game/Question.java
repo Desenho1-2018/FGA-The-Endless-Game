@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class MainMenu extends Scenario {
+public class Question extends Scenario {
 
 	private GameObject arrow = null;
 	private int option = 0;
@@ -12,17 +12,19 @@ public class MainMenu extends Scenario {
 	
 	//Constroi a cena e
 	//adiciona objetos na cena
-	public MainMenu(Window gameWindow, String name) {
+	public Question(Window gameWindow, String name) {
 	
 		window = gameWindow;
 		scenarioName = name;
-		background = new GameImage("src//recursos//sprite//main_menu.png");
+		background = new GameImage("src//recursos//sprite//lousa.jpeg");
 		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
-		GameObject passworld_button = new GameObject(308, 350, "src//recursos//sprite//passworld_button.png", 1,GameObjectType.OTHER);
+		GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png", 1, GameObjectType.OTHER);
+		GameObject mirando = new GameObject(300, 400, "src//recursos//sprite//mirando.png", 1, GameObjectType.OTHER);
 		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
+		this.addSceneObjects(mirando);
 	
 	}
 	
@@ -62,7 +64,7 @@ public class MainMenu extends Scenario {
 	}
 	
 	public String runScenario() {
-		
+	
 		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
@@ -74,24 +76,31 @@ public class MainMenu extends Scenario {
 	private void moveArrow() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
-			if(arrow.y <= 325) {
-				arrow.y = arrow.y + 50;
-				option = 1;
-			} else {
-				arrow.y = arrow.y;
-			}
-			
+				if(option < 2 )
+					option = option + 1;
+				
+		}	
+		else if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
+			 if(option > 0)
+				 option = option - 1;
+		}
+
+		switch (option) {
+		case 0:
+			arrow.y = 300;
+			break;
+		case 1:
+			arrow.y = 350;
+			break;
+		case 2:
+			arrow.y = 400;
+			break;
+		default:
+			//do nothing
+			break;
 		}
 		
-		if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
-			if(arrow.y >= 325) {
-				arrow.y = arrow.y - 50;
-				option = 0;
-			} else {
-				arrow.y = arrow.y;
-			}
-			
-		}
+		
 		
 	}
 	
