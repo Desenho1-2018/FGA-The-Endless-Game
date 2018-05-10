@@ -15,7 +15,7 @@ public class Introduction extends Scenario {
 	public Introduction(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
-	  background = new GameImage(("src/recursos/sprite/intro_background.png"));
+	  background = new GameImage(("src//recursos//sprite//intro_background.png"));
 	  introText = new GameObject(0, 610, "src//recursos//sprite//introduction_text.png", 1, GameObjectType.OTHER);
 	  introWelcome = new GameObject(0, 2180, "src//recursos//sprite//intro_welcome.png", 1, GameObjectType.OTHER);
 		
@@ -32,6 +32,8 @@ public class Introduction extends Scenario {
 
 	protected void updateScenario(){
 		
+		SoundPlayer.play("src//recursos//audio//star_wars_theme.mid");
+		
 		while(this.nextScenario == null) {
 			if(this.introText.y > -1570) {
 				background.draw();
@@ -43,11 +45,12 @@ public class Introduction extends Scenario {
 			
 			} else {
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 				this.nextScenario = "Level1";
+				SoundPlayer.stop();
 			}
 		
 		}
