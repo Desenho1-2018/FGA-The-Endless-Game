@@ -9,7 +9,7 @@ public class Main {
 		LevelStateMachine levelStateMachine = new LevelStateMachine();
 
 		MainMenu startMenu = new MainMenu(gameWindow, "StartMenu");
-		Encerrar finishScene = new Encerrar(gameWindow, "FinishScene");
+		Ending finishScene = new Ending(gameWindow, "FinishScene");
 		Introduction introScene = new Introduction(gameWindow, "IntroductionScene");
 		Battle battle = new Battle(gameWindow, "BattleScene");
 		GameOverMenu gameOver = new GameOverMenu(gameWindow, "GameOver");
@@ -25,7 +25,7 @@ public class Main {
 		levelStateMachine.addScenario(C1);
 		levelStateMachine.addScenario(level1);
 
-		levelStateMachine.run("IntroductionScene");
+		levelStateMachine.run("FinishScene");
 	}
 
 }
