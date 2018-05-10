@@ -6,14 +6,17 @@ import jplay.Window;
 
 public class Battle extends Scenario {
 
+	public static boolean answer;
 	
 	GameImage background = new GameImage(("src/recursos/sprite/UnbGama.png"));
 	
 	public Battle(Window gameWindow, String name){
-	
 	  this.window = gameWindow;
 	  this.scenarioName = name;
+	}
 	
+	public Battle(boolean answer){
+		this.answer = answer;
 	}
 	
 	@Override
@@ -28,7 +31,6 @@ public class Battle extends Scenario {
 		drawScenario();
 		
 		return "FinishScene";
-	
 	}
 	
     public void drawScenario() {
@@ -48,8 +50,6 @@ public class Battle extends Scenario {
 		note.x = 350;
 		note.y = 500;
 		
-		boolean answer = false;
-		
 		while(true){
 			backgroundBattle.draw();
 			battle.draw();
@@ -57,12 +57,12 @@ public class Battle extends Scenario {
 			student.draw();
 			note.draw();
 			
-			collision(answer, professor, student, note);
+			collision(professor, student, note);
 			window.update();
 		}
     }
 	
-    public void collision(boolean answer, Sprite professor, Sprite student, Sprite note){
+    public void collision(Sprite professor, Sprite student, Sprite note){
 	
 	  Sprite wrong = new Sprite("src/recursos/sprite/errou.png");
 	  Sprite correct = new Sprite("src/recursos/sprite/acertou.png");
@@ -71,15 +71,16 @@ public class Battle extends Scenario {
 	  wrong.y = 400;
 	  correct.x = 400;
 	  correct.y = 400;
-	
-	  if(answer == true){
-		note.moveTo(professor.x, professor.y, 0.3);
+	  
+	  if(answer){
+		note.moveTo(professor.x, professor.y+70, 0.5);
 		correct.draw();
 	  } else{
-		  note.moveTo(student.x, student.y, 0.3);
+		  note.moveTo(student.x, student.y+50, 0.5);
 		  wrong.draw();
 	  }
     }
+    
 
 }
 

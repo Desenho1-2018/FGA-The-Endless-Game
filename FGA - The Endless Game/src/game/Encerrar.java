@@ -23,7 +23,7 @@ public class Encerrar extends Scenario {
 		runBackground4();
 		runBackground5();
 	
-		return "StartMenu";
+		return "IntroductionScene";
 		
 	}
 	

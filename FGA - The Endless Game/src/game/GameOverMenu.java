@@ -12,7 +12,7 @@ public class GameOverMenu extends Scenario {
 		window = gameWindow;
 		scenarioName = name;
 		background = new GameImage("src//recursos//sprite//UnbGama.png");
-		GameObject start_again_button = new GameObject(0, 0, "src//recursos//sprite//game_over.png");
+		GameObject start_again_button = new GameObject(0, 0, "src//recursos//sprite//game_over.png", 1, GameObjectType.OTHER);
 		initializeKeyboard();
 		
 		this.addSceneObjects(start_again_button);
