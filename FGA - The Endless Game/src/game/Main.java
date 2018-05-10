@@ -14,15 +14,18 @@ public class Main {
 		Battle battle = new Battle(gameWindow, "BattleScene");
 		QuestionCalculo1 C1 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene", 1);
 		Level1 level1 = new Level1(gameWindow, "Level1");
-
+		LevelMDS levelmds = new LevelMDS(gameWindow, "LevelMDS");
+		
+		
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(finishScene);
 		levelStateMachine.addScenario(introScene);
 		levelStateMachine.addScenario(battle);
 		levelStateMachine.addScenario(C1);
 		levelStateMachine.addScenario(level1);
+		levelStateMachine.addScenario(levelmds);
 
-		levelStateMachine.run("Level1");
+		levelStateMachine.run("LevelMDS");
 
 
 	}
