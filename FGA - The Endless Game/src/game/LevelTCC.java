@@ -10,9 +10,9 @@ import jplay.Window;
 public class LevelTCC extends Level {
 
 	GameObject book = new GameObject(100, 200, "src//recursos//sprite//livro.gif", 1, GameObjectType.REFERENCE_ITEM);
-	GameObject pencil = new GameObject(400, 400, "src//recursos//sprite//canudol.gif", 1,
+	GameObject canudo = new GameObject(400, 400, "src//recursos//sprite//canudol.gif", 1,
 			GameObjectType.REFERENCE_ITEM);
-	GameObject coffe = new GameObject(400, 100, "src//recursos//sprite//coffe.gif", 1, GameObjectType.REFERENCE_ITEM);
+	GameObject coffee = new GameObject(400, 100, "src//recursos//sprite//coffe.gif", 1, GameObjectType.REFERENCE_ITEM);
 	Time tempo = new Time(640, 50, false);
 
 	public LevelTCC(Window gameWindow, String name) {
@@ -22,8 +22,8 @@ public class LevelTCC extends Level {
 		this.background = new GameImage("src//recursos//tiles/planofundo.png");
 		addPlayer(100, 100, "src//recursos//sprite//jogador2.png", 20, window);
 		this.addSceneObjects(book);
-		this.addSceneObjects(pencil);
-		this.addSceneObjects(coffe);
+		this.addSceneObjects(canudo);
+		this.addSceneObjects(coffee);
 
 	}
 
@@ -37,23 +37,44 @@ public class LevelTCC extends Level {
 	}
 
 	private void drawLevel() {
+		boolean coletaItem = false;
+		boolean coletaItem1 = false;
+		boolean coletaItem2 = false;
+		boolean coletaItem3 = false;
+
 		tempo.setColor(Color.WHITE);
 		tempo.setFont(new Font("sansserif", Font.TRUETYPE_FONT, 15));
 		tempo.setTime(0, 0, 30);
 
 		while (this.nextScenario == null) {
-
 			background.draw();
 			tempo.draw("Time: ");
 			book.draw();
-			pencil.draw();
-			coffe.draw();
+			canudo.draw();
+			coffee.draw();
 			playerInstance.draw();
 			playerInstance.setCollisionType(this.playerCollision());
 			playerInstance.move(window);
 			window.update();
+				//int i = 0;
+				if (playerInstance.collided(book)) {
+					book.hide();
+					coletaItem1 = true;
+				}
+				if (playerInstance.collided(canudo)) {
+					canudo.hide();
+					coletaItem2 = true;
+				}
+				if (playerInstance.collided(coffee)) {
+					coffee.hide();
+					coletaItem3 = true;
+				}
+				if(coletaItem1 == true && coletaItem2 == true && coletaItem3 == true) {
+					window.exit();
+				}
 
-		}
+			}
+
 	}
 
 	@Override
