@@ -6,39 +6,63 @@ import jplay.Window;
 
 public class LevelMDS extends Level {
 
-	public LevelMDS(Window gameWindow, String name) {
-		
+	GameImage backGround = new GameImage("src//recursos//sprite//ground_mds.png");
+	private NPC npc1, npc2, npc3;
+	private Scenario cena;
+	private GameObject parede;
+	
+	public LevelMDS(Window gameWindow, String name){
+
 		this.window = gameWindow;
 		this.scenarioName = name;
-		this.background = new GameImage("src//recursos//sprite//ground_mds.png");
-		addPlayer(300,300,"src//recursos/sprite//jogador2.png", 20, window);
+		addPlayer(640, 350, "src//recursos//sprite//jogador2.png", 20, window);
+		npc1 = new NPC(300,300);
+		npc2 = new NPC(400,400);
+		npc3 = new NPC(500,500);
+		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png", 1, GameObjectType.WALL);
+		this.addSceneObjects(parede);
 		this.initializeKeyboard();
 		this.initializeObjects();
 		
 	}
-	
-	
+
 	@Override
-	public String runScenario() {
-		
+	public String runScenario(){
+
+		initializeKeyboard();
 		this.drawLevel();
-		return nextScenario;
-		
+		return "NEXT_LEVEL";
+
 	}
-	
+
 	private void drawLevel() {
-		
-		while(this.nextScenario == null) {
-			
-			background.draw();
-			this.drawObjects();
+		while(true){
+
+			backGround.draw();
+
 			playerInstance.draw();
+	
+			npc1.draw();
+			npc2.draw();
+			npc3.draw();
+			parede.draw();
+						
 			playerInstance.setCollisionType(this.playerCollision());
+			npc1.perseguir(playerInstance.x, playerInstance.y);
+			//player.caminho(cena , parede);
+			npc1.caminho(cena,parede);
+			npc2.perseguir(playerInstance.x, playerInstance.y);
+			//player.caminho(cena , parede);
+			npc2.caminho(cena,parede);
+			npc3.perseguir(playerInstance.x, playerInstance.y);
+			//player.caminho(cena , parede);
+			npc3.caminho(cena,parede);
 			playerInstance.move(window);
-			window.update();
 			
+			parede.update();
+			window.update();
+
 		}
-		
 	}
 	
 	@Override
@@ -99,7 +123,8 @@ public class LevelMDS extends Level {
 		this.addSceneObjects(mocap_table6);
 		this.addSceneObjects(mocap_table7);
 		this.addSceneObjects(mocap_table8);
-
 		
 	}
+
 }
+
