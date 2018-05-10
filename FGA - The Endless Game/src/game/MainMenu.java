@@ -16,16 +16,21 @@ public class MainMenu extends Scenario {
 	
 		window = gameWindow;
 		scenarioName = name;
+	
+	}
+	
+	private void initializeMainMenu(){
+		
 		background = new GameImage("src//recursos//sprite//main_menu.png");
 		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
 		GameObject passworld_button = new GameObject(308, 350, "src//recursos//sprite//passworld_button.png", 1,GameObjectType.OTHER);
 		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
+		nextScenario = null;
+		option = 0;
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
-	
 	}
-	
 
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
@@ -63,6 +68,7 @@ public class MainMenu extends Scenario {
 	
 	public String runScenario() {
 		
+		initializeMainMenu();
 		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
