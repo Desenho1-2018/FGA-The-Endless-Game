@@ -37,11 +37,10 @@ public class LevelTCC extends Level {
 	}
 
 	private void drawLevel() {
-		boolean coletaItem = false;
 		boolean coletaItem1 = false;
 		boolean coletaItem2 = false;
 		boolean coletaItem3 = false;
-
+		
 		tempo.setColor(Color.WHITE);
 		tempo.setFont(new Font("sansserif", Font.TRUETYPE_FONT, 15));
 		tempo.setTime(0, 0, 30);
@@ -56,7 +55,7 @@ public class LevelTCC extends Level {
 			playerInstance.setCollisionType(this.playerCollision());
 			playerInstance.move(window);
 			window.update();
-				//int i = 0;
+				
 				if (playerInstance.collided(book)) {
 					book.hide();
 					coletaItem1 = true;
@@ -70,6 +69,10 @@ public class LevelTCC extends Level {
 					coletaItem3 = true;
 				}
 				if(coletaItem1 == true && coletaItem2 == true && coletaItem3 == true) {
+					window.exit();
+				}
+
+				if(tempo.getSecond() == 0){
 					window.exit();
 				}
 
