@@ -33,11 +33,12 @@ public class Level1 extends Level {
 		while(true){
 
 			backGround.draw();
+
 			playerInstance.draw();
+	
 			npc.draw();
 			parede.draw();
-			
-			
+						
 			playerInstance.setCollisionType(this.playerCollision());
 			npc.perseguir(playerInstance.x, playerInstance.y);
 			//player.caminho(cena , parede);

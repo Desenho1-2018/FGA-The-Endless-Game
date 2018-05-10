@@ -6,131 +6,54 @@ import jplay.Window;
 public class Introduction extends Scenario {
 
 	
-	GameImage background = new GameImage(("src/recursos/sprite/FGA.jpeg"));
+	GameImage background = null;
+	GameObject introText = null;
+	GameObject introWelcome = null;
+	
+	String nextScenario = null;
 	
 	public Introduction(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
+	  background = new GameImage(("src/recursos/sprite/intro_background.png"));
+	  introText = new GameObject(0, 610, "src//recursos//sprite//introduction_text.png", 1, GameObjectType.OTHER);
+	  introWelcome = new GameObject(0, 2180, "src//recursos//sprite//intro_welcome.png", 1, GameObjectType.OTHER);
+		
 	}
 
 	
 	@Override
 	public String runScenario() {
 		
-		runBackground0();
-		runBackground1();
-		runBackground2();
-		runBackground3();
-		runBackground4();
-		runBackground5();
-		
-		return "Cenario1";
+		this.updateScenario();
+		return this.nextScenario;
 	
 	}
-	private void runBackground0(){
+
+	protected void updateScenario(){
 		
-		int control = 0;
-		
-		GameImage background0 = new GameImage(("src/recursos/sprite/BemVindo.png"));
-		
-		while(true){
-			background.draw();
+		while(this.nextScenario == null) {
+			if(this.introText.y > -1570) {
+				background.draw();
+				introText.draw();
+				introWelcome.draw();
+				this.introText.y = this.introText.y - 0.07;
+				this.introWelcome.y = this.introWelcome.y - 0.07;
+				window.update();
 			
-			background0.draw();
+			} else {
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				this.nextScenario = "Level1";
+			}
 		
-			window.update();
-			control++;
-			if(control>2000)
-				break;
-		}
-		
-	}
-	
-	private void runBackground1(){
-		
-		int control1 = 0;
-		
-		GameImage background1 = new GameImage(("src/recursos/sprite/Intro1.png"));
-		
-		while(true){
-			background.draw();
-			background1.draw();
-			
-			window.update();
-			control1++;
-			if(control1>3300)
-				break;
 		}
 	}
 	
-	private void runBackground2(){
-		
-		int control2 = 0;
-		
-		GameImage background2 = new GameImage(("src/recursos/sprite/Intro2.png"));
-		
-		while(true){
-			background.draw();
-			background2.draw();
-			
-			window.update();
-			control2++;
-			if(control2>3300)
-				break;
-		}
-	}
 	
-	private void runBackground3(){
-		
-		int control3 = 0;
-		
-		GameImage background3 = new GameImage(("src/recursos/sprite/Intro3.png"));
-		
-		while(true){
-			background.draw();
-			background3.draw();
-			
-			window.update();
-			control3++;
-			if(control3>3300)
-				break;
-		}
-	}
-	
-	private void runBackground4(){
-		
-		int control4 = 0;
-		
-		GameImage background4 = new GameImage(("src/recursos/sprite/Intro4.png"));
-		
-		while(true){
-			background.draw();
-			background4.draw();
-			
-			window.update();
-			control4++;
-			if(control4>3300)
-				break;
-		}
-	}
-	
-	private void runBackground5(){
-		
-		int control5 = 0;
-		
-		GameImage background5 = new GameImage(("src/recursos/sprite/Intro5.png"));
-		
-		while(true){
-			background.draw();
-			background5.draw();
-			
-			window.update();
-			control5++;
-			if(control5>3300)
-				break;
-		}
-		
-	}
 	
 }
 
