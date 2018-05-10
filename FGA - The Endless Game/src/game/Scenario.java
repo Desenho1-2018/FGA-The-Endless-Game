@@ -18,7 +18,7 @@ public abstract class Scenario extends Scene {
 		protected ArrayList<GameObject> sceneObjects = new ArrayList<GameObject>();
 		
 	
-		//Depois que o level terminar o método run deve retornar o nome da proxima 
+		//Depois que o level terminar o mï¿½todo run deve retornar o nome da proxima 
 		//fase cadastrada na LevelStateMachine
 		public String runScenario() {
 		
@@ -27,15 +27,26 @@ public abstract class Scenario extends Scene {
 		};
 		
 		
-		//Dentro desse método deve haver um while(condição) para rodar a fase
+		//Dentro desse mï¿½todo deve haver um while(condiï¿½ï¿½o) para rodar a fase
 		//Dentro do while deve haver todos os objtos que devem ser desenhados
 		//E no fim do while deve haver um .update();
 		protected void updateScenario() {}
 		
 		
-		//Toda fase possui comandos especificos, logo dentro desse método
-		//deve haver a implementação do teclado específico da cena
-		protected void initializeKeyboard() {}
+		//Toda fase possui comandos especificos, logo dentro desse mï¿½todo
+		//deve haver a implementaï¿½ï¿½o do teclado especï¿½fico da cena
+		protected void initializeKeyboard() {
+			 if(window != null) {
+				   sceneKeyboard = window.getKeyboard();
+				  } else {
+				   System.out.println("The keyboard needs a window to run. The window cannot be null");
+				  }
+				  sceneKeyboard.setBehavior(Keyboard.DOWN_KEY, Keyboard.DETECT_EVERY_PRESS); 
+				  sceneKeyboard.setBehavior(Keyboard.UP_KEY, Keyboard.DETECT_EVERY_PRESS); 
+				  sceneKeyboard.setBehavior(Keyboard.LEFT_KEY, Keyboard.DETECT_EVERY_PRESS);
+				  sceneKeyboard.setBehavior(Keyboard.RIGHT_KEY, Keyboard.DETECT_EVERY_PRESS);
+			
+		}
 		
 		
 		//Desenha o background e os objetos presentes
