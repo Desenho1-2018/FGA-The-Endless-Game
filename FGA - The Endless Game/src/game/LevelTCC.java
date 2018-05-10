@@ -73,7 +73,7 @@ public class LevelTCC extends Level {
 				}
 
 				if(tempo.getSecond() == 0){
-					window.exit();
+					nextScenario = "Reintegracao";
 				}
 
 			}
