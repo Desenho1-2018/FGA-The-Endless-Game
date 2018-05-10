@@ -103,7 +103,7 @@ public class MainMenu extends Scenario {
 			if(option == 0) {
 				nextScenario = "IntroductionScene";
 			} else if (option == 1) {
-				nextScenario = "FinishScene";
+				nextScenario = "PasswordMenu";
 			}
 			
 		}
