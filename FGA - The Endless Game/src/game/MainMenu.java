@@ -107,8 +107,7 @@ public class MainMenu extends Scenario {
 			}
 			
 		}
-		
-
+	
 	}
 	
 }
