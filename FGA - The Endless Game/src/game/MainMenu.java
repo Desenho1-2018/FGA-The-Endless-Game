@@ -21,10 +21,10 @@ public class MainMenu extends Scenario {
 	
 	private void initializeMainMenu(){
 		
-		background = new GameImage("src//recursos//sprite//main_menu.png");
-		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
-		GameObject passworld_button = new GameObject(308, 350, "src//recursos//sprite//passworld_button.png", 1,GameObjectType.OTHER);
-		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
+		background = new GameImage("src//recursos//sprite//main_menu1.png");
+		GameObject start_button = new GameObject(300, 200, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
+		GameObject passworld_button = new GameObject(308, 250, "src//recursos//sprite//passworld_button.png", 1,GameObjectType.OTHER);
+		arrow = new GameObject(270, 210, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
 		nextScenario = null;
 		option = 0;
 		
@@ -80,7 +80,7 @@ public class MainMenu extends Scenario {
 	private void moveArrow() {
 		
 		if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
-			if(arrow.y <= 325) {
+			if(arrow.y <= 225) {
 				arrow.y = arrow.y + 50;
 				option = 1;
 			} else {
@@ -90,7 +90,7 @@ public class MainMenu extends Scenario {
 		}
 		
 		if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
-			if(arrow.y >= 325) {
+			if(arrow.y >= 225) {
 				arrow.y = arrow.y - 50;
 				option = 0;
 			} else {
