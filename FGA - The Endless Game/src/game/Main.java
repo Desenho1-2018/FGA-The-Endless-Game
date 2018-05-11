@@ -16,10 +16,12 @@ public class Main {
 		QuestionCalculo1 C1 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene", 1);
 		Level1 level1 = new Level1(gameWindow, "Level1");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
+		MenuGenderSelector gendermenu = new MenuGenderSelector(gameWindow, "GenderMenu");
 		
 
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(passmenu);
+		levelStateMachine.addScenario(gendermenu);
 		levelStateMachine.addScenario(finishScene);
 		levelStateMachine.addScenario(introScene);
 		levelStateMachine.addScenario(battle);

@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class MainMenu extends Scenario {
+public class MenuGenderSelector extends Scenario {
 
 	private GameObject arrow = null;
 	private int option = 0;
@@ -12,39 +12,37 @@ public class MainMenu extends Scenario {
 	
 	//Constroi a cena e
 	//adiciona objetos na cena
-	public MainMenu(Window gameWindow, String name) {
+	public MenuGenderSelector(Window gameWindow, String name) {
 	
 		window = gameWindow;
 		scenarioName = name;
+		background = new GameImage("src//recursos//sprite//menu_gender.png");
 	
 	}
 	
-	private void initializeMainMenu(){
+	private void initializeGenderMenu(){
 		
-		background = new GameImage("src//recursos//sprite//main_menu.png");
-		GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
-		GameObject passworld_button = new GameObject(308, 350, "src//recursos//sprite//passworld_button.png", 1,GameObjectType.OTHER);
+		
+		GameObject garoto_button = new GameObject(300, 300, "src//recursos//sprite//garoto_button.png", 1, GameObjectType.OTHER);
+		GameObject garota_button = new GameObject(308, 350, "src//recursos//sprite//garota_button.png", 1,GameObjectType.OTHER);
 		arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
 		nextScenario = null;
 		option = 0;
 		
-		this.addSceneObjects(start_button);
-		this.addSceneObjects(passworld_button);
+		this.addSceneObjects(garoto_button);
+		this.addSceneObjects(garota_button);
 	}
 
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
 		
 		while(nextScenario == null) {
-		
+			
 			drawObjects();
 	
-			//Arrow n�o esta na lista de objetos por ser um objeto especifico com movimento.
-			//fica como TO DO o que fazer para generalizar objetos desse tipo tamb�m.
 			arrow.draw();
 			moveArrow();
 			selectOption();
-			
 			
 			window.update();
 		
@@ -68,7 +66,7 @@ public class MainMenu extends Scenario {
 	
 	public String runScenario() {
 		
-		initializeMainMenu();
+		initializeGenderMenu();
 		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
@@ -107,9 +105,11 @@ public class MainMenu extends Scenario {
 		if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
 
 			if(option == 0) {
-				nextScenario = "GenderMenu";
+				//TODO Assign boy sprites to player here
+				nextScenario = "IntroductionScene";
 			} else if (option == 1) {
-				nextScenario = "PasswordMenu";
+				//TODO Assign boy sprites to player here
+				nextScenario = "IntroductionScene";
 			}
 			
 		}
