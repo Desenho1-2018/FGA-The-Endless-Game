@@ -119,12 +119,14 @@ public class LevelMDS extends Level {
 			   System.out.println("2\n");
 			   npc2.fall();
 			   npc2.velocidade = 0.0;
+			   runBackground1();
 		   }
 		   
 		   else if (playerInstance.collided(npc3) == true){
 			   System.out.println("3\n");
 			   npc3.fall();
 			   npc3.velocidade = 0.0;
+			   runBackground2();
 		   }
 		   
 		   window.update();
@@ -197,10 +199,45 @@ public class LevelMDS extends Level {
 			
 			int control = 0;
 			
-			GameImage background0 = new GameImage(("src/recursos/sprite/lousa.png"));
+			GameImage background0 = new GameImage(("src/recursos/sprite/lousaGIT.jpeg"));
 			
 			while(true){
-				background.draw();
+				
+				background0.draw();
+			
+				window.update();
+				control++;
+				if(control>2000)
+					break;
+			}
+			
+		}
+	 
+	 private void runBackground1(){
+			
+			int control = 0;
+			
+			GameImage background0 = new GameImage(("src/recursos/sprite/lousaR1.jpeg"));
+			
+			while(true){
+				
+				background0.draw();
+			
+				window.update();
+				control++;
+				if(control>2000)
+					break;
+			}
+			
+		}
+	 
+	 private void runBackground2(){
+			
+			int control = 0;
+			
+			GameImage background0 = new GameImage(("src/recursos/sprite/lousaR2.jpeg"));
+			
+			while(true){
 				
 				background0.draw();
 			
