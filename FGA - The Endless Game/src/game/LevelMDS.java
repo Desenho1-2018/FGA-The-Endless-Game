@@ -6,6 +6,7 @@ import jplay.Window;
 
 public class LevelMDS extends Level {
 
+	 private GameObject arrow = null;
 	 private NPC npc1, npc2, npc3;
 	 private Scenario cena;
 	 private int option = 0, numberQuestion;
@@ -70,8 +71,6 @@ public class LevelMDS extends Level {
 
 	 @Override
 	 public String runScenario(){
-
-		selectOption(numberQuestion);
 
 		  initializeKeyboard();
 		  this.drawLevel();
@@ -199,11 +198,19 @@ public class LevelMDS extends Level {
 			
 			int control = 0;
 			
-			GameImage background0 = new GameImage(("src/recursos/sprite/lousaGIT.jpeg"));
+			GameImage background0 = new GameImage(("src/recursos/sprite/lousaGIT.jpg"));
+			GameObject start_button = new GameObject(300, 300, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
+			GameObject passworld_button = new GameObject(300, 350, "src//recursos//sprite//passworld_button.png", 1,GameObjectType.OTHER);
+			arrow = new GameObject(250, 300, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
 			
 			while(true){
 				
 				background0.draw();
+				start_button.draw();
+				passworld_button.draw();
+				arrow.draw();
+				moveArrow();
+				selectOption();
 			
 				window.update();
 				control++;
@@ -217,7 +224,7 @@ public class LevelMDS extends Level {
 			
 			int control = 0;
 			
-			GameImage background0 = new GameImage(("src/recursos/sprite/lousaR1.jpeg"));
+			GameImage background0 = new GameImage(("src/recursos/sprite/lousaR1.jpg"));
 			
 			while(true){
 				
@@ -235,7 +242,7 @@ public class LevelMDS extends Level {
 			
 			int control = 0;
 			
-			GameImage background0 = new GameImage(("src/recursos/sprite/lousaR2.jpeg"));
+			GameImage background0 = new GameImage(("src/recursos/sprite/lousaR2.jpg"));
 			
 			while(true){
 				
@@ -249,70 +256,44 @@ public class LevelMDS extends Level {
 			
 		}
 		
-		private void selectOption(int numberQuestion) {
+	 private void moveArrow() {
+			
+			if(sceneKeyboard.keyDown(Keyboard.DOWN_KEY)) {
+				if(arrow.y <= 325) {
+					arrow.y = arrow.y + 50;
+					option = 1;
+				} else {
+					arrow.y = arrow.y;
+				}
+				
+			}
+			
+			if(sceneKeyboard.keyDown(Keyboard.UP_KEY)) {
+				if(arrow.y >= 325) {
+					arrow.y = arrow.y - 50;
+					option = 0;
+				} else {
+					arrow.y = arrow.y;
+				}
+				
+			}
+			
+		}
+		
+		
+		private void selectOption() {
 			
 			if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
-			  if(numberQuestion == 1){
-				switch(option){
-				  case 0: 
-					new Battle(true);
-					nextScenario = "BattleScene";
-					 break;
-				  case 1:
-					new Battle(false);
-					nextScenario = "BattleScene";
-					break;	
-				  case 2:
-					new Battle(false);    
-					nextScenario = "BattleScene";
-					break;
-				  case 3:
-					new Battle(false);   
-					nextScenario = "BattleScene";
-					break;	
+
+				if(option == 0) {
+					nextScenario = "IntroductionScene";
+				} else if (option == 1) {
+					nextScenario = "FinishScene";
 				}
-			  }	
-			  else if(numberQuestion == 2){
-				switch(option){
-				  case 0: 
-					new Battle(false);
-					nextScenario = "BattleScene";
-				  break;
-				  case 1:
-					new Battle(false);
-					nextScenario = "BattleScene";
-				  break;	
-				  case 2:
-					new Battle(true);    
-					nextScenario = "BattleScene";
-				  break;
-				  case 3:
-					new Battle(false);   
-					nextScenario = "BattleScene";
-				  break;	
-				}  
-			  }
-			  else if(numberQuestion == 3){
-				switch(option){
-				 case 0: 
-				   new Battle(false);
-				   nextScenario = "BattleScene";
-				 break;
-				 case 1:
-				   new Battle(true);
-				   nextScenario = "BattleScene";
-				 break;	
-				 case 2:
-				   new Battle(false);    
-				   nextScenario = "BattleScene";
-				 break;
-				 case 3:
-				   new Battle(false);   
-				   nextScenario = "BattleScene";
-				  break;	
-					}  
-				  }
+				
 			}
+			
+
 		}
 
 }
