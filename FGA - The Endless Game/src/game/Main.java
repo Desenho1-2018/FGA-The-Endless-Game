@@ -27,7 +27,7 @@ public class Main {
 		levelStateMachine.addScenario(C1);
 		levelStateMachine.addScenario(level1);
 		levelStateMachine.addScenario(levelTCC);
-		levelStateMachine.run("StartMenu");
+		levelStateMachine.run("QuestionCalculo1Scene");
 	}
 
 }
