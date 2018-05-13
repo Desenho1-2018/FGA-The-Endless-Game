@@ -7,6 +7,7 @@ import jplay.Window;
 public class Battle extends Scenario {
 
 	public static boolean answer;
+	public static String currentScene;
 	
 	GameImage background = new GameImage(("src/recursos/sprite/UnbGama.png"));
 	
@@ -15,8 +16,9 @@ public class Battle extends Scenario {
 	  this.scenarioName = name;
 	}
 	
-	public Battle(boolean answer){
+	public Battle(boolean answer, String currentScene){
 		this.answer = answer;
+		this.currentScene = currentScene;
 	}
 	
 	@Override
@@ -30,7 +32,18 @@ public class Battle extends Scenario {
 		
 		drawScenario();
 		
-		return "FinishScene";
+		if(currentScene == "QuestionCalculo1Scene1")
+			return "QuestionCalculo1Scene2";
+		  else if(currentScene == "QuestionCalculo1Scene2")
+			  return "QuestionCalculo1Scene3"; 
+		     else if(currentScene == "QuestionCalculo1Scene3")
+			    return "QuestionMDSScene1";	
+		     else if(currentScene == "QuestionMDSScene1")
+				    return "QuestionMDSScene2";
+		     else if(currentScene == "QuestionMDSScene2")
+				    return "QuestionMDSScene3";	
+		return scenarioName;
+		
 	}
 	
     public void drawScenario() {
@@ -40,6 +53,7 @@ public class Battle extends Scenario {
 		Sprite student = new Sprite("src/recursos/sprite/universitario.png");
 		Sprite battle = new Sprite("src/recursos/sprite/Batalha.png");
 		Sprite note = new Sprite("src/recursos/sprite/nota.png");
+		int control = 0;
 		
 		battle.x = 100;
 		battle.y = 0;		
@@ -59,6 +73,12 @@ public class Battle extends Scenario {
 			
 			collision(professor, student, note);
 			window.update();
+			
+			control++;
+			if(control == 3000){
+				break;
+			}
+				
 		}
     }
 	
@@ -80,7 +100,6 @@ public class Battle extends Scenario {
 		  wrong.draw();
 	  }
     }
-    
 
 }
 

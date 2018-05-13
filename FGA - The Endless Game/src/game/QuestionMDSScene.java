@@ -142,19 +142,19 @@ public class QuestionMDSScene extends Scenario {
 		  if(numberQuestion == 1){
 			switch(option){
 			  case 0: 
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene1");
 				nextScenario = "BattleScene";
 				 break;
 			  case 1:
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene1");
 				nextScenario = "BattleScene";
 				break;	
 			  case 2:
-				new Battle(true);    
+				new Battle(true, "QuestionMDSScene1");    
 				nextScenario = "BattleScene";
 				break;
 			  case 3:
-				new Battle(false);   
+				new Battle(false, "QuestionMDSScene1");   
 				nextScenario = "BattleScene";
 				break;	
 			}
@@ -162,19 +162,19 @@ public class QuestionMDSScene extends Scenario {
 		  else if(numberQuestion == 2){
 			switch(option){
 			  case 0: 
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene2");
 				nextScenario = "BattleScene";
 			  break;
 			  case 1:
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene2");
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
-				new Battle(false);    
+				new Battle(false, "QuestionMDSScene2");    
 				nextScenario = "BattleScene";
 			  break;
 			  case 3:
-				new Battle(true);   
+				new Battle(true, "QuestionMDSScene2");   
 				nextScenario = "BattleScene";
 			  break;	
 			}  
@@ -182,19 +182,19 @@ public class QuestionMDSScene extends Scenario {
 		  else if(numberQuestion == 3){
 			switch(option){
 			 case 0: 
-			   new Battle(false);
+			   new Battle(false, "QuestionMDSScene3");
 			   nextScenario = "BattleScene";
 			 break;
 			 case 1:
-			   new Battle(false);
+			   new Battle(false, "QuestionMDSScene3");
 			   nextScenario = "BattleScene";
 			 break;	
 			 case 2:
-			   new Battle(false);    
+			   new Battle(false, "QuestionMDSScene3");    
 			   nextScenario = "BattleScene";
 			 break;
 			 case 3:
-			   new Battle(true);   
+			   new Battle(true, "QuestionMDSScene3");   
 			   nextScenario = "BattleScene";
 			  break;	
 				}  

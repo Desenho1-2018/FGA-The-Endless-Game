@@ -49,7 +49,7 @@ public class Introduction extends Scenario {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				this.nextScenario = "Level1";
+				this.nextScenario = "LevelC1";
 				SoundPlayer.stop();
 			}
 		

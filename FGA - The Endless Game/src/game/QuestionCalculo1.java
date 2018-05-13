@@ -142,19 +142,19 @@ public class QuestionCalculo1 extends Scenario {
 		  if(numberQuestion == 1){
 			switch(option){
 			  case 0: 
-				new Battle(true);
+				new Battle(true, "QuestionCalculo1Scene1");
 				nextScenario = "BattleScene";
 				 break;
 			  case 1:
-				new Battle(false);
+				new Battle(false, "QuestionCalculo1Scene1");
 				nextScenario = "BattleScene";
 				break;	
 			  case 2:
-				new Battle(false);    
+				new Battle(false, "QuestionCalculo1Scene1");    
 				nextScenario = "BattleScene";
 				break;
 			  case 3:
-				new Battle(false);   
+				new Battle(false, "QuestionCalculo1Scene1");   
 				nextScenario = "BattleScene";
 				break;	
 			}
@@ -162,19 +162,19 @@ public class QuestionCalculo1 extends Scenario {
 		  else if(numberQuestion == 2){
 			switch(option){
 			  case 0: 
-				new Battle(false);
+				new Battle(false, "QuestionCalculo1Scene2");
 				nextScenario = "BattleScene";
 			  break;
 			  case 1:
-				new Battle(false);
+				new Battle(false, "QuestionCalculo1Scene2");
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
-				new Battle(true);    
+				new Battle(true, "QuestionCalculo1Scene2");    
 				nextScenario = "BattleScene";
 			  break;
 			  case 3:
-				new Battle(false);   
+				new Battle(false, "QuestionCalculo1Scene2");   
 				nextScenario = "BattleScene";
 			  break;	
 			}  
@@ -182,19 +182,19 @@ public class QuestionCalculo1 extends Scenario {
 		  else if(numberQuestion == 3){
 			switch(option){
 			 case 0: 
-			   new Battle(false);
+			   new Battle(false, "QuestionCalculo1Scene3");
 			   nextScenario = "BattleScene";
 			 break;
 			 case 1:
-			   new Battle(true);
+			   new Battle(true, "QuestionCalculo1Scene3");
 			   nextScenario = "BattleScene";
 			 break;	
 			 case 2:
-			   new Battle(false);    
+			   new Battle(false, "QuestionCalculo1Scene3");    
 			   nextScenario = "BattleScene";
 			 break;
 			 case 3:
-			   new Battle(false);   
+			   new Battle(false, "QuestionCalculo1Scene3");   
 			   nextScenario = "BattleScene";
 			  break;	
 				}  
