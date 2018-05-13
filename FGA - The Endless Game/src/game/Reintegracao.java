@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Sprite;
 import jplay.Window;
-import game.GameButton;
+
 
 public class Reintegracao extends Scenario {
 

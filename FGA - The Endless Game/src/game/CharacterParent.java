@@ -9,6 +9,8 @@ import jplay.Scene;
 import jplay.Sprite;
 import jplay.TileInfo;
 
+import game.CollisionControl;
+
 public class CharacterParent extends Sprite{
 	
 
