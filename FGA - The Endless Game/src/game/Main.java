@@ -45,7 +45,7 @@ public class Main {
 		levelStateMachine.addScenario(LevelC1);
 	
 		
-		levelStateMachine.run("QuestionCalculo1Scene1");
+		levelStateMachine.run("ScoreScreen");
 	}
 
 }

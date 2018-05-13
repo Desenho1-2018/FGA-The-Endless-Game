@@ -23,6 +23,7 @@ public class ScoreScreen extends Level {
 	
 	private void initializeScoreMenu(){
 	
+		this.addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
 		background = new GameImage("src//recursos//sprite//main_menu1.png");
 		GameObject score_button = new GameObject(300, 200, "src//recursos//sprite//iniciar_button.png", 1, GameObjectType.OTHER);
 		arrow = new GameObject(270, 210, "src//recursos//sprite//arrow_button.png", 1, GameObjectType.OTHER);
