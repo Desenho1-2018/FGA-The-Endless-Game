@@ -30,11 +30,13 @@ public class MainMenu extends Scenario {
 		
 		this.addSceneObjects(start_button);
 		this.addSceneObjects(passworld_button);
+		
 	}
 
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
 		
+		SoundPlayer.play("src//recursos//audio//goodTheBadAndTheUgly.mid");
 		while(nextScenario == null) {
 		
 			drawObjects();

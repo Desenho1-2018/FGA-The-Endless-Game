@@ -25,22 +25,22 @@ public class Introduction extends Scenario {
 	@Override
 	public String runScenario() {
 		
+		SoundPlayer.play("src//recursos//audio//star_wars_theme.mid");
 		this.updateScenario();
 		return this.nextScenario;
 	
 	}
 
 	protected void updateScenario(){
-		
-		SoundPlayer.play("src//recursos//audio//star_wars_theme.mid");
+
 		
 		while(this.nextScenario == null) {
 			if(this.introText.y > -1570) {
 				background.draw();
 				introText.draw();
 				introWelcome.draw();
-				this.introText.y = this.introText.y - 0.05;
-				this.introWelcome.y = this.introWelcome.y - 0.05;
+				this.introText.y = this.introText.y - 0.0;
+				this.introWelcome.y = this.introWelcome.y - 0.07;
 				window.update();
 			
 			} else {
