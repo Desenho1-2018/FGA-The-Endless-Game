@@ -14,6 +14,8 @@ public class Main {
 		Battle battle = new Battle(gameWindow, "BattleScene");
 		GameOverMenu gameOver = new GameOverMenu(gameWindow, "GameOver");
 		QuestionCalculo1 C1 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene", 1);
+		QuestionCalculo1 C2 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene", 2);
+		QuestionCalculo1 C3 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene", 3);
 		Level1 level1 = new Level1(gameWindow, "Level1");
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
@@ -25,9 +27,11 @@ public class Main {
 		levelStateMachine.addScenario(battle);
 		levelStateMachine.addScenario(gameOver);
 		levelStateMachine.addScenario(C1);
+		levelStateMachine.addScenario(C2);
+		levelStateMachine.addScenario(C3);
 		levelStateMachine.addScenario(level1);
 		levelStateMachine.addScenario(levelTCC);
-		levelStateMachine.run("StartMenu");
+		levelStateMachine.run("Level1");
 	}
 
 }
