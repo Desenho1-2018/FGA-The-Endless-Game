@@ -14,9 +14,9 @@ public class Ending extends Scenario {
 	public Ending(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
-	  background = new GameImage(("src//recursos//sprite//intro_background.png"));
-	  endingText = new GameObject(0, 610, "src//recursos//sprite//ending_text.png", 1, GameObjectType.OTHER);
-	  endingCredits = new GameObject(0, 2180, "src//recursos//sprite//ending_credits.png", 1, GameObjectType.OTHER);
+	  background = new GameImage(("src//recursos//sprite//ending//intro_background.png"));
+	  endingText = new GameObject(-20, 610, "src//recursos//sprite//ending//ending_text.png", 1, GameObjectType.OTHER);
+	  endingCredits = new GameObject(0, 2180, "src//recursos//sprite//ending//ending_credits.png", 1, GameObjectType.OTHER);
 		
 	}
 

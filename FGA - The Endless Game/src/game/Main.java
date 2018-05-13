@@ -20,13 +20,13 @@ public class Main {
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
 		ScoreScreen scorescreen = new ScoreScreen(gameWindow, "ScoreScreen");
-		
+
 		QuestionMDSScene MDS1 = new QuestionMDSScene(gameWindow, "QuestionMDSScene1", 1);
 		QuestionMDSScene MDS2 = new QuestionMDSScene(gameWindow, "QuestionMDSScene2", 2);
 		QuestionMDSScene MDS3 = new QuestionMDSScene(gameWindow, "QuestionMDSScene3", 3);
-		
+
 		LevelC1 LevelC1 = new LevelC1(gameWindow, "LevelC1");
-		
+
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(passmenu);
 		levelStateMachine.addScenario(finishScene);
@@ -43,8 +43,9 @@ public class Main {
 		levelStateMachine.addScenario(MDS2);
 		levelStateMachine.addScenario(MDS3);
 		levelStateMachine.addScenario(LevelC1);
-	
-		levelStateMachine.run("QuestionCalculo1Scene1");
+
+		levelStateMachine.run("StartMenu");
+
 	}
 
 }
