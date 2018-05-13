@@ -33,7 +33,7 @@ public class Main {
 		levelStateMachine.addScenario(levelTCC);
 		levelStateMachine.addScenario(MDS);
 		levelStateMachine.addScenario(LevelC1);
-		levelStateMachine.run("LevelC1");
+		levelStateMachine.run("StartMenu");
 	}
 
 }

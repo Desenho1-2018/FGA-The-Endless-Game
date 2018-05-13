@@ -20,7 +20,6 @@ public class Player extends GameObject{
 		this.x = x; // setting the x and y to the passed cordinates
 		this.y = y;
 		this.setTotalDuration(2000); //millisecconds
-		this.initializeKeyboard(gameWindow);
 		
 	}
 	
@@ -86,20 +85,6 @@ public class Player extends GameObject{
 		}
 	
 	}
-
-	private void initializeKeyboard(Window window){
-		
-		if(window != null) {
-			playerKeyboard = window.getKeyboard();
-		} else {
-			System.out.println("The keyboard needs a window to run. The window cannot be null");
-		}
-		playerKeyboard.setBehavior(Keyboard.DOWN_KEY, Keyboard.DETECT_EVERY_PRESS); 
-		playerKeyboard.setBehavior(Keyboard.UP_KEY, Keyboard.DETECT_EVERY_PRESS); 
-		playerKeyboard.setBehavior(Keyboard.LEFT_KEY, Keyboard.DETECT_EVERY_PRESS);
-		playerKeyboard.setBehavior(Keyboard.RIGHT_KEY, Keyboard.DETECT_EVERY_PRESS);
-	
-	}
 	
 	
 	//metodo singleton
@@ -121,6 +106,10 @@ public class Player extends GameObject{
 	
 	public void setCollisionType(GameObjectType cType) {
 		this.collisionType = cType;
+	}
+	
+	public GameObjectType getCollisionType() {
+		return this.collisionType;
 	}
 	
 }
