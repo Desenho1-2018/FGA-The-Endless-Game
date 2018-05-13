@@ -12,6 +12,7 @@ public class Player extends GameObject{
 	private boolean isMoving = false;
 	private static Player instancePlayer = null;
 	private GameObjectType collisionType = null;
+	private String previousLevel = null;
 	
 	
 	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
@@ -119,6 +120,14 @@ public class Player extends GameObject{
 	
 	public void setScore(int sc){
 		this.score = sc;
+	}
+	
+	public String getPreviousLevel() {
+		return this.previousLevel;
+	}
+	
+	public void setPreviousLevel(String level) {
+		this.previousLevel = level;
 	}
 	
 }
