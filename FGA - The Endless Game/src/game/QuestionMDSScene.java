@@ -50,11 +50,11 @@ public class QuestionMDSScene extends Scenario {
 		}
 		
 		else if(numberQuestion == 3){
-			GameObject integral = new GameObject(50, 50, "src//recursos//sprite//question//integral.jpeg", 1, GameObjectType.OTHER);
-			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//0.png", 1, GameObjectType.OTHER);
-			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//1.png", 1, GameObjectType.OTHER);
-			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//2.png", 1, GameObjectType.OTHER);
-			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//3.png", 1, GameObjectType.OTHER);
+			GameObject integral = new GameObject(50, 50, "src//recursos//sprite//question//par.jpeg", 1, GameObjectType.OTHER);
+			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//par4.png", 1, GameObjectType.OTHER);
+			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//par2.png", 1, GameObjectType.OTHER);
+			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//par3.png", 1, GameObjectType.OTHER);
+			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//par1.png", 1, GameObjectType.OTHER);
 			
 			this.addSceneObjects(answer0);
 			this.addSceneObjects(answer1);
@@ -186,7 +186,7 @@ public class QuestionMDSScene extends Scenario {
 			   nextScenario = "BattleScene";
 			 break;
 			 case 1:
-			   new Battle(true);
+			   new Battle(false);
 			   nextScenario = "BattleScene";
 			 break;	
 			 case 2:
@@ -194,7 +194,7 @@ public class QuestionMDSScene extends Scenario {
 			   nextScenario = "BattleScene";
 			 break;
 			 case 3:
-			   new Battle(false);   
+			   new Battle(true);   
 			   nextScenario = "BattleScene";
 			  break;	
 				}  
