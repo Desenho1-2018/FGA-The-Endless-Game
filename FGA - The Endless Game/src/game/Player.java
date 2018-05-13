@@ -139,4 +139,8 @@ public class Player extends GameObject{
 		this.nextLevel = level;
 	}
 	
+	public void resetScore() {
+		this.score = 3;
+	}
+	
 }

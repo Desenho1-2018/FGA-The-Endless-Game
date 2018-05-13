@@ -42,6 +42,8 @@ public class Battle extends Level {
 				    return "QuestionMDSScene2";
 		     else if(currentScene == "QuestionMDSScene2")
 				    return "QuestionMDSScene3";	
+		     else if(currentScene == "QuestionMDSScene3")
+				    return "ScoreScreen";	
 		return "ScoreSceen";
 		
 	}

@@ -121,8 +121,6 @@ public class ScoreScreen extends Level {
 	
 	private void drawPassword() {
 		
-		playerInstance.setPreviousLevel("LevelC1");
-		
 		switch(this.playerInstance.getPreviousLevel()) {
 		case("LevelC1"):
 			password[0].draw();
@@ -140,15 +138,23 @@ public class ScoreScreen extends Level {
 		
 	}
 	
+	
 	private void enterNextScreen() {
 		if(sceneKeyboard.keyDown(Keyboard.ENTER_KEY)) {
 
-			if(option == 0) {
-				nextScenario = "IntroductionScene";
-			} else if (option == 1) {
-				nextScenario = "PasswordMenu";
+			switch(this.playerInstance.getPreviousLevel()) {
+			case("LevelC1"):
+				this.playerInstance.resetScore();
+				this.nextScenario = "QuestionMDSScene1";
+				break;
+			case("LevelMDS"):
+				this.playerInstance.resetScore();
+				this.nextScenario = "LevelTCC";
+				break;
+			case("LevelTCC"):
+				this.nextScenario = "FinishScene";
+				break;
 			}
-			
 		}
 	}
 	

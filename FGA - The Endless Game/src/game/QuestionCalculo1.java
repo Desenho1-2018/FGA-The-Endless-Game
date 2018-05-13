@@ -102,6 +102,7 @@ public class QuestionCalculo1 extends Level {
 		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
+		this.playerInstance.setPreviousLevel("LevelC1");
 		return nextScenario;
 		
 	}
