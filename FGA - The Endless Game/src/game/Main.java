@@ -20,6 +20,7 @@ public class Main {
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
 		Reintegracao reint = new Reintegracao(gameWindow, "Reintegracao");
+
 		
 		QuestionMDSScene MDS1 = new QuestionMDSScene(gameWindow, "QuestionMDSScene1", 1);
 		QuestionMDSScene MDS2 = new QuestionMDSScene(gameWindow, "QuestionMDSScene2", 2);
@@ -44,8 +45,10 @@ public class Main {
 		levelStateMachine.addScenario(LevelC1);
 		levelStateMachine.addScenario(reint);
 
+
+
 		
-		levelStateMachine.run("LevelTCC");
+		levelStateMachine.run("Reintegracao");
 	}
 
 }
