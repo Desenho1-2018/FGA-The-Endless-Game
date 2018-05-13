@@ -20,6 +20,8 @@ public class Main {
 		
 		QuestionMDSScene MDS = new QuestionMDSScene(gameWindow, "QuestionMDSScene", 1);
 		
+		LevelC1 LevelC1 = new LevelC1(gameWindow, "LevelC1");
+		
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(passmenu);
 		levelStateMachine.addScenario(finishScene);
@@ -30,7 +32,8 @@ public class Main {
 		levelStateMachine.addScenario(level1);
 		levelStateMachine.addScenario(levelTCC);
 		levelStateMachine.addScenario(MDS);
-		levelStateMachine.run("StartMenu");
+		levelStateMachine.addScenario(LevelC1);
+		levelStateMachine.run("LevelC1");
 	}
 
 }
