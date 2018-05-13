@@ -2,6 +2,7 @@ package game;
 
 
 import jplay.Window;
+import game.Player;
 
 public abstract class Level extends Scenario {
 	
