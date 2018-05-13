@@ -22,11 +22,11 @@ public class QuestionMDSScene extends Scenario {
 		this.numberQuestion = numberQuestion;
 		
 		if(numberQuestion == 1){
-			GameObject limit = new GameObject(50, 50, "src//recursos//sprite//question//limite.jpeg", 1, GameObjectType.OTHER);
-			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//27.png", 1, GameObjectType.OTHER);
-			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//36.png", 1, GameObjectType.OTHER);
-			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//45.png", 1, GameObjectType.OTHER);
-			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//54.png", 1, GameObjectType.OTHER);
+			GameObject limit = new GameObject(50, 50, "src//recursos//sprite//question//rup.jpeg", 1, GameObjectType.OTHER);
+			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//rup3.png", 1, GameObjectType.OTHER);
+			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//rup2.png", 1, GameObjectType.OTHER);
+			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//rup1.png", 1, GameObjectType.OTHER);
+			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//rup4.png", 1, GameObjectType.OTHER);
 			
 			this.addSceneObjects(answer0);
 			this.addSceneObjects(answer1);
@@ -142,7 +142,7 @@ public class QuestionMDSScene extends Scenario {
 		  if(numberQuestion == 1){
 			switch(option){
 			  case 0: 
-				new Battle(true);
+				new Battle(false);
 				nextScenario = "BattleScene";
 				 break;
 			  case 1:
@@ -150,7 +150,7 @@ public class QuestionMDSScene extends Scenario {
 				nextScenario = "BattleScene";
 				break;	
 			  case 2:
-				new Battle(false);    
+				new Battle(true);    
 				nextScenario = "BattleScene";
 				break;
 			  case 3:
