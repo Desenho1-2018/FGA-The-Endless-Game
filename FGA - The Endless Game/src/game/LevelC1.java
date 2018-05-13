@@ -25,6 +25,8 @@ public class LevelC1 extends Level {
 	
 	private void drawLevel() {
 		
+		SoundPlayer.play("src//recursos//audio//missionImpossible.mid");		
+		
 		while(this.nextScenario == null) {
 			
 			background.draw();
