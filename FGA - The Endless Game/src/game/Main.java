@@ -3,6 +3,8 @@ package game;
 import jplay.Window;
 
 public class Main {
+	
+	
 
 	public static void main(String[] args){
 		Window gameWindow = new Window(800, 600);
@@ -19,7 +21,7 @@ public class Main {
 		Level1 level1 = new Level1(gameWindow, "Level1");
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
-		Reintegracao reint = new Reintegracao(gameWindow, "Reintegracao");
+		Reintegracao reint = new Reintegracao(gameWindow, "Reintegracao", "Level1");
 
 		
 		QuestionMDSScene MDS1 = new QuestionMDSScene(gameWindow, "QuestionMDSScene1", 1);
@@ -48,7 +50,7 @@ public class Main {
 
 
 		
-		levelStateMachine.run("Reintegracao");
+		levelStateMachine.run("LevelTCC");
 	}
 
 }
