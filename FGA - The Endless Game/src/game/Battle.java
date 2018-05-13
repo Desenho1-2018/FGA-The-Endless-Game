@@ -13,6 +13,7 @@ public class Battle extends Level {
 	public Battle(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
+	  this.addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
 	}
 	
 	public Battle(boolean answer, String currentScene){
@@ -41,7 +42,7 @@ public class Battle extends Level {
 				    return "QuestionMDSScene2";
 		     else if(currentScene == "QuestionMDSScene2")
 				    return "QuestionMDSScene3";	
-		return scenarioName;
+		return "ScoreSceen";
 		
 	}
 	
@@ -98,7 +99,6 @@ public class Battle extends Level {
 	  } else{
 		  note.moveTo(student.x, student.y+50, 0.5);
 		  wrong.draw();
-		  playerInstance.setScore(-1);
 	  }
     }
 

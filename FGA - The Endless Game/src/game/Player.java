@@ -13,15 +13,6 @@ public class Player extends GameObject{
 	private static Player instancePlayer = null;
 	private GameObjectType collisionType = null;
 	
-	public int getScore(){
-		return score;
-		
-	}
-	
-	public void setScore(int score){
-		this.score = score;
-	}
-	
 	
 	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
 		
@@ -119,6 +110,15 @@ public class Player extends GameObject{
 	
 	public GameObjectType getCollisionType() {
 		return this.collisionType;
+	}
+	
+	public int getScore(){
+		return score;
+		
+	}
+	
+	public void setScore(int sc){
+		this.score = sc;
 	}
 	
 }
