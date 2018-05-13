@@ -106,7 +106,7 @@ public class LevelC1 extends Level {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			this.nextScenario = "QuestionCalculo1Scene";
+			this.nextScenario = "QuestionCalculo1Scene1";
 		}
 		
 	}

@@ -5,13 +5,15 @@ import jplay.Window;
 
 public class Player extends GameObject{
 
+	public static int score = 3;
 	private double speed = 0.3;
 	private int direction = 3;
 	private Keyboard playerKeyboard;
 	private boolean isMoving = false;
 	private static Player instancePlayer = null;
 	private GameObjectType collisionType = null;
-	
+	private String previousLevel = null;
+	private String nextLevel = null;
 	
 	
 	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
@@ -110,6 +112,35 @@ public class Player extends GameObject{
 	
 	public GameObjectType getCollisionType() {
 		return this.collisionType;
+	}
+	
+	public int getScore(){
+		return score;
+		
+	}
+	
+	public void setScore(int sc){
+		this.score = this.score - sc;
+	}
+	
+	public String getPreviousLevel() {
+		return this.previousLevel;
+	}
+	
+	public void setPreviousLevel(String level) {
+		this.previousLevel = level;
+	}
+
+	public String getNextLevel() {
+		return this.nextLevel;
+	}
+	
+	public void setNextLevel(String level) {
+		this.nextLevel = level;
+	}
+	
+	public void resetScore() {
+		this.score = 3;
 	}
 	
 }

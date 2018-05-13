@@ -4,16 +4,16 @@ import jplay.GameImage;
 import jplay.Sprite;
 import jplay.Window;
 
-public class Battle extends Scenario {
+public class Battle extends Level {
 
 	public static boolean answer;
 	public static String currentScene;
-	
 	GameImage background = new GameImage(("src/recursos/sprite/UnbGama.png"));
 	
 	public Battle(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
+	  this.addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
 	}
 	
 	public Battle(boolean answer, String currentScene){
@@ -37,12 +37,14 @@ public class Battle extends Scenario {
 		  else if(currentScene == "QuestionCalculo1Scene2")
 			  return "QuestionCalculo1Scene3"; 
 		     else if(currentScene == "QuestionCalculo1Scene3")
-			    return "QuestionMDSScene1";	
+			    return "ScoreScreen";	
 		     else if(currentScene == "QuestionMDSScene1")
 				    return "QuestionMDSScene2";
 		     else if(currentScene == "QuestionMDSScene2")
 				    return "QuestionMDSScene3";	
-		return scenarioName;
+		     else if(currentScene == "QuestionMDSScene3")
+				    return "ScoreScreen";	
+		return "ScoreSceen";
 		
 	}
 	
@@ -70,7 +72,7 @@ public class Battle extends Scenario {
 			professor.draw();
 			student.draw();
 			note.draw();
-			
+			playerInstance.getScore();
 			collision(professor, student, note);
 			window.update();
 			
@@ -95,6 +97,7 @@ public class Battle extends Scenario {
 	  if(answer){
 		note.moveTo(professor.x, professor.y+70, 0.5);
 		correct.draw();
+		
 	  } else{
 		  note.moveTo(student.x, student.y+50, 0.5);
 		  wrong.draw();
