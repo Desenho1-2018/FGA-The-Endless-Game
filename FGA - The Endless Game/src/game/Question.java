@@ -1,7 +1,6 @@
 package game;
 
 import jplay.GameImage;
-import game.GameObject;
 import jplay.Keyboard;
 import jplay.Window;
 

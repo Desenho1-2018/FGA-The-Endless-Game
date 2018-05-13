@@ -1,5 +1,9 @@
 /game/
 /recursos/
 /QuestionCalculo1/
+<<<<<<< HEAD
+/diagrama de classe.ucls
+=======
 /Diagrama de Classe.ucls
 /diagrama de classe1.ucls
+>>>>>>> branch 'new_c1_level' of https://github.com/Desenho1-2018/FGA-The-Endless-Game.git

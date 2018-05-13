@@ -21,7 +21,7 @@ public abstract class Level extends Scenario {
 		this.playerInstance = Player.getPlayerInstance(posX, posY, spritePath, spriteDivision, gameWindow);
 	}
 	
-	public GameObjectType playerCollision() {
+	protected GameObjectType playerCollision() {
 	
 		GameObjectType type = null;
 		
@@ -49,5 +49,7 @@ public abstract class Level extends Scenario {
 		
 		return type;
 	}
+	
+	protected void initializeObjects() {};
 
 }
