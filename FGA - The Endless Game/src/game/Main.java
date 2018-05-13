@@ -18,7 +18,7 @@ public class Main {
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
 		
-		QuestionMDSScene MDS = new QuestionMDSScene(gameWindow, "QuestionMDSScene", 1);
+		QuestionMDSScene MDS = new QuestionMDSScene(gameWindow, "QuestionMDSScene", 2);
 		
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(passmenu);

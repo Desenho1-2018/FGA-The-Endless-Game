@@ -36,11 +36,11 @@ public class QuestionMDSScene extends Scenario {
 		}
 		
 		else if(numberQuestion == 2){
-			GameObject derivada = new GameObject(50, 50, "src//recursos//sprite//question//derivada.jpeg", 1, GameObjectType.OTHER);
-			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//d3.png", 1, GameObjectType.OTHER);
-			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//d2.png", 1, GameObjectType.OTHER);
-			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//d1.png", 1, GameObjectType.OTHER);
-			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//d4.png", 1, GameObjectType.OTHER);
+			GameObject derivada = new GameObject(50, 50, "src//recursos//sprite//question//Scrum.jpeg", 1, GameObjectType.OTHER);
+			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//Scrum4.png", 1, GameObjectType.OTHER);
+			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//Scrum2.png", 1, GameObjectType.OTHER);
+			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//Scrum3.png", 1, GameObjectType.OTHER);
+			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//Scrum1.png", 1, GameObjectType.OTHER);
 			
 			this.addSceneObjects(answer0);
 			this.addSceneObjects(answer1);
@@ -170,11 +170,11 @@ public class QuestionMDSScene extends Scenario {
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
-				new Battle(true);    
+				new Battle(false);    
 				nextScenario = "BattleScene";
 			  break;
 			  case 3:
-				new Battle(false);   
+				new Battle(true);   
 				nextScenario = "BattleScene";
 			  break;	
 			}  
