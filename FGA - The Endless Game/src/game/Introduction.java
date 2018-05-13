@@ -25,14 +25,14 @@ public class Introduction extends Scenario {
 	@Override
 	public String runScenario() {
 		
+		SoundPlayer.play("src//recursos//audio//star_wars_theme.mid");
 		this.updateScenario();
 		return this.nextScenario;
 	
 	}
 
 	protected void updateScenario(){
-		
-		SoundPlayer.play("src//recursos//audio//star_wars_theme.mid");
+
 		
 		while(this.nextScenario == null) {
 			if(this.introText.y > -1570) {

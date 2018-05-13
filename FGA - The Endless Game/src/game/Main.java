@@ -50,7 +50,11 @@ public class Main {
 
 
 		
+<<<<<<< HEAD
 		levelStateMachine.run("LevelTCC");
+=======
+		levelStateMachine.run("StartMenu");
+>>>>>>> 4633a3bc7961383538a80e3b3a6c03ab7bcf84fd
 	}
 
 }

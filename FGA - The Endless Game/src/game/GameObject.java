@@ -18,7 +18,9 @@ public class GameObject extends Sprite{
 		this.type = objtype;
 	
 	}
-
+    public void setwidth(int big) {
+    	this.width=big;
+    }
 	public void setGameObjectName(String name) {
 		gameObjectName = name;
 	}
