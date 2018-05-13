@@ -33,6 +33,7 @@ public class LevelC1 extends Level {
 			playerInstance.setCollisionType(this.playerCollision());
 			playerInstance.move(window);
 			playerTranstionToQuestion();
+			playerInstance.setImFrom("LevelC1");
 			window.update();
 			
 		}

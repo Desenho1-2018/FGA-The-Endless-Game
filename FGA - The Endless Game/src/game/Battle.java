@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Sprite;
 import jplay.Window;
 
-public class Battle extends Scenario {
+public class Battle extends Level {
 
 	public static boolean answer;
 	
@@ -13,6 +13,7 @@ public class Battle extends Scenario {
 	public Battle(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
+	  addPlayer(-100, -100, "src//recursos//sprite//jogador2.png", 20, window);
 	}
 	
 	public Battle(boolean answer){
@@ -30,7 +31,7 @@ public class Battle extends Scenario {
 		
 		drawScenario();
 		
-		return "FinishScene";
+		return playerInstance.getImFrom();
 	}
 	
     public void drawScenario() {
@@ -50,7 +51,7 @@ public class Battle extends Scenario {
 		note.x = 350;
 		note.y = 500;
 		
-		while(true){
+		while(this.nextScenario != null){
 			backgroundBattle.draw();
 			battle.draw();
 			professor.draw();

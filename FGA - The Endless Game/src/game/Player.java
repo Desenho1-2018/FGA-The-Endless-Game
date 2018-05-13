@@ -11,6 +11,7 @@ public class Player extends GameObject{
 	private boolean isMoving = false;
 	private static Player instancePlayer = null;
 	private GameObjectType collisionType = null;
+	private String imFrom = null;
 	
 	
 	
@@ -112,4 +113,13 @@ public class Player extends GameObject{
 		return this.collisionType;
 	}
 	
+	public String getImFrom() {
+		return this.imFrom;
+	}
+	
+	public void setImFrom(String level) {
+		
+		this.imFrom = level;
+		
+	}
 }
