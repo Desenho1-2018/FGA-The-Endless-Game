@@ -41,6 +41,8 @@ public abstract class Level extends Scenario {
 					type = GameObjectType.OTHER;
 				} else if(obj.getType() == GameObjectType.NOTHING) {
 					type = GameObjectType.NOTHING;
+				} else if(obj.getType() == GameObjectType.TRANSITION) {
+					type = GameObjectType.TRANSITION;
 				}
 				
 			}

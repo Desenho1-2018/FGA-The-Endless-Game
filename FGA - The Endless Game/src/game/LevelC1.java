@@ -11,12 +11,13 @@ public class LevelC1 extends Level {
 		this.window = gameWindow;
 		this.scenarioName = name;
 		this.background = new GameImage("src//recursos//sprite//LevelC1//ground_room.png");
-		addPlayer(300,300,"src//recursos//sprite//jogador2.png", 20, window);
+		addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
 		this.initializeKeyboard();
 	}
 
 	@Override
 	public String runScenario() {
+		this.initializeKeyboard();
 		this.initializeObjects();
 		this.drawLevel();
 		return nextScenario;
@@ -31,6 +32,7 @@ public class LevelC1 extends Level {
 			playerInstance.draw();
 			playerInstance.setCollisionType(this.playerCollision());
 			playerInstance.move(window);
+			playerTranstionToQuestion();
 			window.update();
 			
 		}
@@ -38,17 +40,18 @@ public class LevelC1 extends Level {
 	}
 	
 	@Override
-	protected void initializeKeyboard() {
+	protected void initializeKeyboard(){
 		
 		if(window != null) {
 			sceneKeyboard = window.getKeyboard();
 		} else {
-			System.out.println("The keyboard needs a window to run. The windo cannot be null");
+			System.out.println("The keyboard needs a window to run. The window cannot be null");
 		}
 		sceneKeyboard.setBehavior(Keyboard.DOWN_KEY, Keyboard.DETECT_EVERY_PRESS); 
 		sceneKeyboard.setBehavior(Keyboard.UP_KEY, Keyboard.DETECT_EVERY_PRESS); 
 		sceneKeyboard.setBehavior(Keyboard.LEFT_KEY, Keyboard.DETECT_EVERY_PRESS);
 		sceneKeyboard.setBehavior(Keyboard.RIGHT_KEY, Keyboard.DETECT_EVERY_PRESS);
+	
 	}
 	
 	@Override
@@ -70,12 +73,8 @@ public class LevelC1 extends Level {
 		GameObject verticalWallR = new GameObject(0,25, verticalWall,1,GameObjectType.WALL);
 		GameObject verticalWallL = new GameObject(775,25, verticalWall,1,GameObjectType.WALL);
 		GameObject whiteFrame = new GameObject(250,25, white_frame, 1, GameObjectType.WALL);
-		GameObject whiteFrameTable = new GameObject(250,50, table_of_frame, 1, GameObjectType.OTHER);
+		GameObject whiteFrameTable = new GameObject(250,50, table_of_frame, 1, GameObjectType.TRANSITION);
 		GameObject professorTable = new GameObject(25, 90, professor_table, 1, GameObjectType.WALL);
-		
-		
-		
-		//GameObject professorTable = new GameObject(70, 90, professor_table, 1, GameObjectType.WALL);
 		
 		for(int i = 0; i < 4; i++) {
 			for(int j = 0; j < 3; j++) {	
@@ -93,6 +92,20 @@ public class LevelC1 extends Level {
 		this.addSceneObjects(whiteFrame);
 		this.addSceneObjects(whiteFrameTable);
 		this.addSceneObjects(professorTable);
+		
+	}
+	
+	private void playerTranstionToQuestion() {
+		
+		if(this.playerInstance.getCollisionType() == GameObjectType.TRANSITION) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			this.nextScenario = "QuestionCalculo1Scene";
+		}
 		
 	}
 	

@@ -185,6 +185,14 @@ public class PasswordMenu extends Scenario {
 		case("levell"):
 			this.nextScenario = "Level1";
 			break;
+		case("introd"):
+			this.nextScenario = "IntroductionScene";
+			break;
+		case("finish"):
+			this.nextScenario = "FinishScene";
+		case("libnew"):
+			this.nextScenario = "LevelC1";
+			break;
 		default:
 			this.nextScenario = "PasswordMenu";
 		}
