@@ -5,6 +5,7 @@ import jplay.Window;
 
 public class Player extends GameObject{
 
+	public static int score = 3;
 	private double speed = 0.3;
 	private int direction = 3;
 	private Keyboard playerKeyboard;
@@ -12,6 +13,14 @@ public class Player extends GameObject{
 	private static Player instancePlayer = null;
 	private GameObjectType collisionType = null;
 	
+	public int getScore(){
+		return score;
+		
+	}
+	
+	public void setScore(int score){
+		this.score = score;
+	}
 	
 	
 	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
