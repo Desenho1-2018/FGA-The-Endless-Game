@@ -1,54 +1,78 @@
 package game;
 
-import jplay.Sprite;
+import java.util.ArrayList;
 
-public class Wall  extends Sprite{
+public class Wall  extends GameObject{
 	private Wall parede1;
 	private Wall parede2;
 	private Wall parede3;
 	private Wall parede4;
 	private Wall parede5;
-	private final int playerwidth=52;
-	private final int playerheight=52;
+	private final int playerwidth=82;
+	private final int playerheight=82;
+	ArrayList <GameObject> paredes =new ArrayList<GameObject>();
 	public void Parede2() {
 		
 	}
 	public Wall(String filename, int x, int y, int width, int height) {
-		super((filename),1);
-		this.x=x;
-		this.y=y;
-		this.width=width;
+		super(x,y, filename,1,GameObjectType.WALL);
+		//this.width=width;
+		this.setwidth(width);
 		this.height=height;
 		// TODO Auto-generated constructor stub
 	}
+	
 	public void 	paredeesquerda(int x,int y, int width, int height){
 			Wall parede7;
-			parede7=new Wall("src//recursos//sprite//parededadireita.png",x,y,width,height);
-		    parede7.draw();
+			parede7=new Wall("src//recursos//sprite//paredeesquerda.png",x,y,10,height);
+		    this.drawing(parede7);
 	}
 	public void paredecima(int x,int y, int width) {
 	    	Wall parede8;
 	    	parede8=new Wall("src//recursos//sprite//parededebaixo3.png",x,y,width,10);
-	    	parede8.draw();
+	        this.drawing(parede8);
 	    	
 	}
-	
+	public int sizeparedes() {
+		return paredes.size();
+	}
+	public GameObject getparede(int i) {
+		 return paredes.get(i);
+		
+	}
+	public ArrayList<GameObject> getparedes() {
+		return paredes;
+	}
 	public int calcwidth(int y) {
         return y+playerwidth;
     }
     public int calcheight(int x) {
         return x+playerheight;
     } 
+    public void drawing(Wall parede1) {
+		paredes.add((GameObject)parede1);
+	}
+    public void paredesdraw() {
+    	int i,i2;
+    	GameObject parede;
+    	i2=this.sizeparedes();
+    	for(i=0;i<i2;i++) {
+    	  parede=this.getparede(i);	
+    	  parede.draw();
+    	}
+    }
+    
 	public void draw(String filename, int x, int y, int width,int height) {
 		Wall parede11;
 		parede11=new Wall(filename,x,y,width,height);
-		parede11.draw();
+	    drawing(parede11);
 	}
+	
 	public void paredeslateraislabirinto1() {
 		draw("src//recursos//sprite//parededebaixo3.png",playerwidth,1,10000,10);
 		int wallcoordenatey=590;
 		int c=800-playerwidth; 
-		draw("src//recursos//sprite//parededebaixo3.png",1,wallcoordenatey,c,10);
+		draw("src//recursos//sprite//parededebaixo3.png",1,300,200,10);
 		draw("src//recursos//sprite//parededadireita.png",1,playerwidth,10,10000);
 		draw("src//recursos//sprite//parededadireita.png",790,10,10,c);
 		
@@ -61,11 +85,29 @@ public class Wall  extends Sprite{
 		draw("src//recursos//sprite//parededadireita.png",790,10,10,1000);
 		
 	}
+	public void paredeslateraislabirinto2(){
+	 int wallcoordenatey=590;
+	 draw("src//recursos//sprite//parededebaixo3.png",1,1,1000,10);
+	 draw("src//recursos//sprite//parededebaixo3.png",1,580,1000,10);
+	 draw("src//recursos//sprite//paredeesquerda.png",1,playermultiplymore(10,1),10,10000);
+	 draw("src//recursos//sprite//paredeesquerda.png",1,100,10,10000);
+	 draw("src//recursos//sprite//paredeesquerda.png",1,400,10,120);
+	 this.paredeesquerda(790,1,1000,1000);
+	 this.paredeesquerda(790, 500,10,100);
+	
+	
+    }
 	public void paredeslateraislabirinto() {
 		draw();
 		int wallcoordenatey=590;
-		draw("src//recursos//sprite//parededebaixo2.png",1,wallcoordenatey,playermultiplymenus(800,1),10);
+		draw("src//recursos//sprite//parededebaixo3.png",1,1,1000,10);
+		draw("src//recursos//sprite//parededebaixo3.png",1,580,1000,10);
 		draw("src//recursos//sprite//paredeesquerda.png",1,playermultiplymore(10,1),10,10000);
+		draw("src//recursos//sprite//paredeesquerda.png",1,100,10,10000);
+		draw("src//recursos//sprite//paredeesquerda.png",1,400,10,120);
+		this.paredeesquerda(790,1,1000,1000);
+		//this.paredeesquerda(790, 200,10,1000);
+		this.paredeesquerda(790, 500,10,100);
 		
 		
 	}
@@ -88,17 +130,18 @@ public class Wall  extends Sprite{
     	int value=x+width;
     	paredeesquerda(value,y,width,height);
     }
-	public void labirtinto() {
+   
+	public void labirinto() {
 	    int firstwall=50; 
 	    int firstwallw=firstwall+playerwidth;
 	    int firstwallw2=firstwall+2*playerwidth;
 	    int firstwallw3=270+playerwidth+10;
-	    paredecima(calcheight(10),firstwall,firstwallw3);
-	    paredeesquerda(90,10,10,playerwidth);
-	    paredeesquerda(calcheight(10),firstwall,30,playerwidth);// x, y, width,height
-	    paredecima(calcwidth(10),firstwallw,90);
+	  //  paredecima(calcheight(10),firstwall,firstwallw3);
+	   paredeesquerda(90,10,10,playerwidth);
+	   // paredeesquerda(calcheight(10),firstwall,30,playerwidth);// x, y, width,height
+	    //paredecima(calcwidth(10),firstwallw,90);
 	    paredecima(calcwidth(10),firstwallw2,140);//x,y,width horizontal wall ends in the thirdwall
-    	    int firstcurve=190;
+    	int firstcurve=190;
 	    int firstcurvew=10;
 	    paredecima(10,200,65);
 	    paredeesquerda(65,firstwallw2,55,playerwidth);
@@ -122,13 +165,13 @@ public class Wall  extends Sprite{
 	    int fourthwallw2=fourthwall+playerwidth;
 	    int fourthwallx=fourthwall-playerwidth+10;
 	    paredecima(fourthwallw2,fourthwally2,playerwidth);
-            paredecima(newwidth,109,50);
+        paredecima(newwidth,109,50);
 	    int fourthwallx3=fourthwallx-playerwidth;
 	    paredecima(fourthwallx3,fourthwally2,2*playerwidth);
 	    int fivethwally=fourthwally2+playerwidth;
 	    int fivethwallx=fourthwally2+4*playerwidth-10;
-            paredeesquerda(fivethwallx,fourthwally2,20,playermultiplymore(1,2));
-            int fivethwally3=fivethwally+playerwidth;
+        paredeesquerda(fivethwallx,fourthwally2,20,playermultiplymore(1,2));
+        int fivethwally3=fivethwally+playerwidth;
 	    int fivethwallx2=fourthwally2+playerwidth;
 	    paredecima(fivethwallx2,fivethwally,160);
 	    paredeesquerda(playermultiplymenus(fivethwallx,4),fourthwally2,20,2*playerwidth);
@@ -136,7 +179,7 @@ public class Wall  extends Sprite{
 	    int mirrorwallx2=mirrorwallx+2*playerwidth;
 	    int seventhwall=mirrorwallx2+playerwidth;
 	    paredecima(mirrorwallx,playermultiplymore(fourthwally2,2),2*playerwidth);
-            paredeesquerda(mirrorwallx2,playermultiplymore(fourthwally2,2),20,playermultiplymore(1,2));
+        paredeesquerda(mirrorwallx2,playermultiplymore(fourthwally2,2),20,playermultiplymore(1,2));
 	    paredeesquerda(seventhwall,playermultiplymore(fourthwally2,2),20,playerwidth);
 	    paredecima(seventhwall,playermultiplymore(fourthwally2,2),playermultiplymore(20,1));
 	    paredecima(seventhwall,playermultiplymore(fourthwally2,3),playermultiplymore(-30,3));
@@ -145,7 +188,7 @@ public class Wall  extends Sprite{
 	    int twoaftermirrorwall=playermultiplymore(mirrorwallx2,5)-40;
 	    paredeesquerda(twoaftermirrorwall,playermultiplymore(fourthwally2,1),playerwidth,3*playerwidth);
 	    paredeesquerda(playermultiplymenus(twoaftermirrorwall,1),playermultiplymore(fourthwally2,1),playerwidth,2*playerwidth);
-	    paredecima(playermultiplymenus(twoaftermirrorwall,2),fourthwally2,3*playerwidth); 
+	    //paredecima(playermultiplymenus(twoaftermirrorwall,2),fourthwally2,3*playerwidth); 
 	    paredeesquerda(playermultiplymore(twoaftermirrorwall,1),fourthwally2, playerwidth,2*playerwidth);
 	    int  treeaftermirrory=playermultiplymore(fourthwally2,3);
 	    int  treeaftermirrorx=playermultiplymore(twoaftermirrorwall,1);
