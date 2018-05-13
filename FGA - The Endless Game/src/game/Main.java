@@ -18,6 +18,8 @@ public class Main {
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
 		
+		QuestionMDSScene MDS = new QuestionMDSScene(gameWindow, "QuestionMDSScene", 1);
+		
 		levelStateMachine.addScenario(startMenu);
 		levelStateMachine.addScenario(passmenu);
 		levelStateMachine.addScenario(finishScene);
@@ -27,6 +29,7 @@ public class Main {
 		levelStateMachine.addScenario(C1);
 		levelStateMachine.addScenario(level1);
 		levelStateMachine.addScenario(levelTCC);
+		levelStateMachine.addScenario(MDS);
 		levelStateMachine.run("StartMenu");
 	}
 
