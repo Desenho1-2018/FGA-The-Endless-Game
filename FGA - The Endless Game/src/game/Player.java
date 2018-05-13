@@ -13,6 +13,7 @@ public class Player extends GameObject{
 	private static Player instancePlayer = null;
 	private GameObjectType collisionType = null;
 	private String previousLevel = null;
+	private String nextLevel = null;
 	
 	
 	private Player(int x, int y, String spritePath, int spriteDivision, Window gameWindow) { // parameters that set the player initial location
@@ -119,7 +120,7 @@ public class Player extends GameObject{
 	}
 	
 	public void setScore(int sc){
-		this.score = sc;
+		this.score = this.score - sc;
 	}
 	
 	public String getPreviousLevel() {
@@ -128,6 +129,14 @@ public class Player extends GameObject{
 	
 	public void setPreviousLevel(String level) {
 		this.previousLevel = level;
+	}
+
+	public String getNextLevel() {
+		return this.nextLevel;
+	}
+	
+	public void setNextLevel(String level) {
+		this.nextLevel = level;
 	}
 	
 }

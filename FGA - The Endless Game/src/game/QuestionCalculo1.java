@@ -148,19 +148,22 @@ public class QuestionCalculo1 extends Level {
 				 break;
 			  case 1:
 				new Battle(false, "QuestionCalculo1Scene1");
-				this.playerInstance.setScore(2);
+				this.playerInstance.setScore(1);
+				waitAtime();
 				System.out.println(this.playerInstance.getScore());
 				nextScenario = "BattleScene";
 				
 				break;	
 			  case 2:
 				new Battle(false, "QuestionCalculo1Scene1");
-				this.playerInstance.setScore(2);
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 				break;
 			  case 3:
 				new Battle(false, "QuestionCalculo1Scene1");
-				this.playerInstance.setScore(2);
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 				break;	
 			}
@@ -170,11 +173,13 @@ public class QuestionCalculo1 extends Level {
 			  case 0: 
 				new Battle(false, "QuestionCalculo1Scene2");
 				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 			  break;
 			  case 1:
 				new Battle(false, "QuestionCalculo1Scene2");
 				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
@@ -184,6 +189,7 @@ public class QuestionCalculo1 extends Level {
 			  case 3:
 				new Battle(false, "QuestionCalculo1Scene2");
 				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 			  break;	
 			}  
@@ -192,7 +198,8 @@ public class QuestionCalculo1 extends Level {
 			switch(option){
 			 case 0: 
 			   new Battle(false, "QuestionCalculo1Scene3");
-				this.playerInstance.setScore(0);
+				this.playerInstance.setScore(1);
+				waitAtime();
 			   nextScenario = "BattleScene";
 			 break;
 			 case 1:
@@ -201,16 +208,27 @@ public class QuestionCalculo1 extends Level {
 			 break;	
 			 case 2:
 			   new Battle(false, "QuestionCalculo1Scene3");
-				this.playerInstance.setScore(0);
+				this.playerInstance.setScore(1);
+				waitAtime();
 			   nextScenario = "BattleScene";
 			 break;
 			 case 3:
 			   new Battle(false, "QuestionCalculo1Scene3");
-				this.playerInstance.setScore(0);
+				this.playerInstance.setScore(1);
+				waitAtime();
 			   nextScenario = "BattleScene";
 			  break;	
 				}  
 			  }
+		}
+	}
+	
+	private void waitAtime() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
