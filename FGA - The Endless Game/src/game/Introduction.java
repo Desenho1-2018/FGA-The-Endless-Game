@@ -15,9 +15,9 @@ public class Introduction extends Scenario {
 	public Introduction(Window gameWindow, String name){
 	  this.window = gameWindow;
 	  this.scenarioName = name;
-	  background = new GameImage(("src//recursos//sprite//intro_background.png"));
-	  introText = new GameObject(0, 610, "src//recursos//sprite//introduction_text.png", 1, GameObjectType.OTHER);
-	  introWelcome = new GameObject(0, 2180, "src//recursos//sprite//intro_welcome.png", 1, GameObjectType.OTHER);
+	  background = new GameImage(("src//recursos//sprite//introduction//intro_background.png"));
+	  introText = new GameObject(0, 610, "src//recursos//sprite//introduction//introduction_text.png", 1, GameObjectType.OTHER);
+	  introWelcome = new GameObject(0, 2180, "src//recursos//sprite//introduction//intro_welcome.png", 1, GameObjectType.OTHER);
 		
 	}
 
@@ -39,8 +39,8 @@ public class Introduction extends Scenario {
 				background.draw();
 				introText.draw();
 				introWelcome.draw();
-				this.introText.y = this.introText.y - 0.07;
-				this.introWelcome.y = this.introWelcome.y - 0.07;
+				this.introText.y = this.introText.y - 0.05;
+				this.introWelcome.y = this.introWelcome.y - 0.05;
 				window.update();
 			
 			} else {

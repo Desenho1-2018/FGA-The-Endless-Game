@@ -42,7 +42,7 @@ public class Main {
 		levelStateMachine.addScenario(MDS3);
 		levelStateMachine.addScenario(LevelC1);
 		
-		levelStateMachine.run("QuestionCalculo1Scene1");
+		levelStateMachine.run("IntroductionScene");
 	}
 
 }
