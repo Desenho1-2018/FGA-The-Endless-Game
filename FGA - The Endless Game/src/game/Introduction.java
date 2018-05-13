@@ -39,8 +39,8 @@ public class Introduction extends Scenario {
 				background.draw();
 				introText.draw();
 				introWelcome.draw();
-				this.introText.y = this.introText.y - 0.0;
-				this.introWelcome.y = this.introWelcome.y - 0.07;
+				this.introText.y = this.introText.y - 0.05;
+				this.introWelcome.y = this.introWelcome.y - 0.05;
 				window.update();
 			
 			} else {
