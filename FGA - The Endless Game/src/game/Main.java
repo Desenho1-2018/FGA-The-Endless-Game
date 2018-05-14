@@ -47,7 +47,7 @@ public class Main {
 		levelStateMachine.addScenario(reint);
 
 
-		levelStateMachine.run("LevelTCC");
+		levelStateMachine.run("StartMenu");
 
 	}
 
