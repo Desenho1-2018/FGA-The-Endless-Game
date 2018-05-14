@@ -12,12 +12,10 @@ public class Reintegracao extends Scenario {
 	Sprite numbers = new Sprite("src//recursos//sprite//continue");
 	GameButton continue_button = new GameButton(240, 400, "src//recursos//sprite//continuebutton1.png");
 	int count = 9;
-	String faseAtual;
 
-	public Reintegracao(Window gameWindow, String name, String faseAtual) {
+	public Reintegracao(Window gameWindow, String name) {
 		this.window = gameWindow;
 		this.scenarioName = name;
-		this.faseAtual = faseAtual;
 	}
 
 	@Override
@@ -43,7 +41,7 @@ public class Reintegracao extends Scenario {
 				nextScenario = "GameOver";
 			}
 			if (keyboard.keyDown(Keyboard.ENTER_KEY)) {
-				nextScenario = faseAtual;
+				nextScenario = "LevelTCC";
 				break;
 			} else if (keyboard.keyDown(Keyboard.ESCAPE_KEY)) {
 				nextScenario = "GameOver";

@@ -21,7 +21,7 @@ public class Main {
 		Level1 level1 = new Level1(gameWindow, "Level1");
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
-		Reintegracao reint = new Reintegracao(gameWindow, "Reintegracao", "Level1");
+		Reintegracao reint = new Reintegracao(gameWindow, "Reintegracao");
 
 		
 		QuestionMDSScene MDS1 = new QuestionMDSScene(gameWindow, "QuestionMDSScene1", 1);
@@ -50,11 +50,8 @@ public class Main {
 
 
 		
-<<<<<<< HEAD
 		levelStateMachine.run("LevelTCC");
-=======
-		levelStateMachine.run("StartMenu");
->>>>>>> 4633a3bc7961383538a80e3b3a6c03ab7bcf84fd
+
 	}
 
 }
