@@ -37,12 +37,15 @@ public class Reintegracao extends Scenario {
 				System.out.println("Não foi possível abrir a tela de Reintegração");
 				e.printStackTrace();
 			}
+			if(count == 0) {
+				nextScenario = "GameOver";
+			}
 			if (keyboard.keyDown(Keyboard.ENTER_KEY)) {
-				nextScenario = "Game Continue";
-				// window.exit();
+				nextScenario = "LevelTCC";
+				break;
 			} else if (keyboard.keyDown(Keyboard.ESCAPE_KEY)) {
-				nextScenario = "Game Over";
-				// window.exit();
+				nextScenario = "GameOver";
+				break;
 			}
 		}
 		return nextScenario;

@@ -76,7 +76,7 @@ public class LevelTCC extends Level {
 		
 		tempo.setColor(Color.WHITE);
 		tempo.setFont(new Font("sansserif", Font.TRUETYPE_FONT, 15));
-		tempo.setTime(0, 0, 30);
+		tempo.setTime(0, 0, 5);
 
 		while (this.nextScenario == null) {
 			background.draw();

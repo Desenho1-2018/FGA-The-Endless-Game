@@ -16,7 +16,7 @@ public class Main {
 		QuestionCalculo1 C1 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene1", 1);
 		QuestionCalculo1 C2 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene2", 2);
 		QuestionCalculo1 C3 = new QuestionCalculo1(gameWindow, "QuestionCalculo1Scene3", 3);
-
+		Reintegracao reint = new Reintegracao(gameWindow, "Reintegracao");
 		LevelTCC levelTCC = new LevelTCC(gameWindow, "LevelTCC");
 		PasswordMenu passmenu = new PasswordMenu(gameWindow, "PasswordMenu");
 		ScoreScreen scorescreen = new ScoreScreen(gameWindow, "ScoreScreen");
@@ -37,12 +37,15 @@ public class Main {
 		levelStateMachine.addScenario(C1);
 		levelStateMachine.addScenario(C2);
 		levelStateMachine.addScenario(C3);
+		
 
 		levelStateMachine.addScenario(levelTCC);
 		levelStateMachine.addScenario(MDS1);
 		levelStateMachine.addScenario(MDS2);
 		levelStateMachine.addScenario(MDS3);
 		levelStateMachine.addScenario(LevelC1);
+		levelStateMachine.addScenario(reint);
+
 
 		levelStateMachine.run("LevelTCC");
 
