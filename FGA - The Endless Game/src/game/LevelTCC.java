@@ -145,7 +145,7 @@ public class LevelTCC extends Level {
 
 				if(tempo.getSecond() == 0 || playerInstance.collided(sono) || 
 						playerInstance.collided(cansaco) || playerInstance.collided(prazo)){
-					nextScenario = "Reintegracao";
+					nextScenario = "GameOver";
 				}
 
 			}
