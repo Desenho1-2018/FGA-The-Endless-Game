@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class QuestionCalculo1 extends Scenario {
+public class QuestionCalculo1 extends Level {
 
 	private GameObject arrow = null;
 	private int option = 0;
@@ -20,6 +20,7 @@ public class QuestionCalculo1 extends Scenario {
 		background = new GameImage("src//recursos//sprite//lousa.jpeg");
 		arrow = new GameObject(50, 300, "src//recursos//sprite//arrow_transparente.png", 1, GameObjectType.OTHER);
 		this.numberQuestion = numberQuestion;
+		this.addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
 		
 		if(numberQuestion == 1){
 			GameObject limit = new GameObject(50, 50, "src//recursos//sprite//question//limite.jpeg", 1, GameObjectType.OTHER);
@@ -71,7 +72,7 @@ public class QuestionCalculo1 extends Scenario {
 		while(nextScenario == null) {
 		
 			drawObjects();
-	
+			System.out.println("Score player " + this.playerInstance.getScore());
 			//Arrow n�o esta na lista de objetos por ser um objeto especifico com movimento.
 			//fica como TO DO o que fazer para generalizar objetos desse tipo tamb�m.
 			arrow.draw();
@@ -101,6 +102,7 @@ public class QuestionCalculo1 extends Scenario {
 		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
+		this.playerInstance.setPreviousLevel("LevelC1");
 		return nextScenario;
 		
 	}
@@ -147,14 +149,22 @@ public class QuestionCalculo1 extends Scenario {
 				 break;
 			  case 1:
 				new Battle(false, "QuestionCalculo1Scene1");
+				this.playerInstance.setScore(1);
+				waitAtime();
+				System.out.println(this.playerInstance.getScore());
 				nextScenario = "BattleScene";
+				
 				break;	
 			  case 2:
-				new Battle(false, "QuestionCalculo1Scene1");    
+				new Battle(false, "QuestionCalculo1Scene1");
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 				break;
 			  case 3:
-				new Battle(false, "QuestionCalculo1Scene1");   
+				new Battle(false, "QuestionCalculo1Scene1");
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 				break;	
 			}
@@ -163,18 +173,24 @@ public class QuestionCalculo1 extends Scenario {
 			switch(option){
 			  case 0: 
 				new Battle(false, "QuestionCalculo1Scene2");
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 			  break;
 			  case 1:
 				new Battle(false, "QuestionCalculo1Scene2");
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
-				new Battle(true, "QuestionCalculo1Scene2");    
+				new Battle(true, "QuestionCalculo1Scene2");
 				nextScenario = "BattleScene";
 			  break;
 			  case 3:
-				new Battle(false, "QuestionCalculo1Scene2");   
+				new Battle(false, "QuestionCalculo1Scene2");
+				this.playerInstance.setScore(1);
+				waitAtime();
 				nextScenario = "BattleScene";
 			  break;	
 			}  
@@ -183,6 +199,8 @@ public class QuestionCalculo1 extends Scenario {
 			switch(option){
 			 case 0: 
 			   new Battle(false, "QuestionCalculo1Scene3");
+				this.playerInstance.setScore(1);
+				waitAtime();
 			   nextScenario = "BattleScene";
 			 break;
 			 case 1:
@@ -190,15 +208,28 @@ public class QuestionCalculo1 extends Scenario {
 			   nextScenario = "BattleScene";
 			 break;	
 			 case 2:
-			   new Battle(false, "QuestionCalculo1Scene3");    
+			   new Battle(false, "QuestionCalculo1Scene3");
+				this.playerInstance.setScore(1);
+				waitAtime();
 			   nextScenario = "BattleScene";
 			 break;
 			 case 3:
-			   new Battle(false, "QuestionCalculo1Scene3");   
+			   new Battle(false, "QuestionCalculo1Scene3");
+				this.playerInstance.setScore(1);
+				waitAtime();
 			   nextScenario = "BattleScene";
 			  break;	
 				}  
 			  }
+		}
+	}
+	
+	private void waitAtime() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	

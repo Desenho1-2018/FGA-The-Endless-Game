@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import jplay.GameImage;
 import jplay.Sprite;
+import jplay.Keyboard;
 import jplay.Time;
 import jplay.Window;
 
@@ -63,7 +64,7 @@ public class LevelTCC extends Level {
 	@Override
 	public String runScenario() {
 
-		// initializeKeyboard();
+		initializeKeyboard();
 		this.drawLevel();
 		return nextScenario;
 
@@ -126,6 +127,14 @@ public class LevelTCC extends Level {
 
 	@Override
 	protected void initializeKeyboard() {
-
+		if(window != null) {
+			sceneKeyboard = window.getKeyboard();
+		} else {
+			System.out.println("The keyboard needs a window to run. The window cannot be null");
+		}
+		sceneKeyboard.setBehavior(Keyboard.DOWN_KEY, Keyboard.DETECT_EVERY_PRESS); 
+		sceneKeyboard.setBehavior(Keyboard.UP_KEY, Keyboard.DETECT_EVERY_PRESS); 
+		sceneKeyboard.setBehavior(Keyboard.LEFT_KEY, Keyboard.DETECT_EVERY_PRESS);
+		sceneKeyboard.setBehavior(Keyboard.RIGHT_KEY, Keyboard.DETECT_EVERY_PRESS);
 	}
 }
