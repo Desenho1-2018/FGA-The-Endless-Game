@@ -1,12 +1,12 @@
 package game;
 
-public class MonsterType2Builder implements NPCBuilder {
-	
+public class MonsterType3Builder implements NPCBuilder {
+
 	private NPC npc;
 	
-	public MonsterType2Builder(){
+	public MonsterType3Builder(){
 		
-		this.npc = new NPC(300, 300);
+		this.npc = new NPC(400, 400);
 		
 	}
 

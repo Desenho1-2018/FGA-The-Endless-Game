@@ -6,7 +6,7 @@ public class MonsterType1Builder implements NPCBuilder {
 	
 	public MonsterType1Builder(){
 		
-		this.npc = new NPC(0, 0);
+		this.npc = new NPC(200, 200);
 		
 	}
 
@@ -23,8 +23,7 @@ public class MonsterType1Builder implements NPCBuilder {
 	}
 
 	public NPC getNPC() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.npc;
 	}
 
 }

@@ -36,6 +36,8 @@ public class LevelTCC extends Level {
 	GameObject horizontalWallB = new GameObject(0,575, horizontalWall,1,GameObjectType.WALL);
 	GameObject verticalWallR = new GameObject(0,25, verticalWall,1,GameObjectType.WALL);
 	GameObject verticalWallL = new GameObject(775,25, verticalWall,1,GameObjectType.WALL);
+	NPC cansaco, sono, prazo;
+	Scenario cena;
 
 	public LevelTCC(Window gameWindow, String name) {
 
@@ -43,6 +45,9 @@ public class LevelTCC extends Level {
 		this.scenarioName = name;
 		this.background = new GameImage("src//recursos//tiles/planofundo.png");
 		addPlayer(100, 100, "src//recursos//sprite//jogador2.png", 20, window);
+		NPCBuilder monstroCansaco = new MonsterType1Builder();
+		NPCBuilder monstroSono = new MonsterType2Builder();
+		NPCBuilder monstroPrazo = new MonsterType3Builder();
 		this.addSceneObjects(book);
 		this.addSceneObjects(canudo);
 		this.addSceneObjects(coffee);
@@ -57,6 +62,18 @@ public class LevelTCC extends Level {
 		this.addSceneObjects(horizontalWallB);
 		this.addSceneObjects(verticalWallR);
 		this.addSceneObjects(verticalWallL);
+		
+		MonsterGenerator generateMonsterCansaco = new MonsterGenerator(monstroCansaco);
+		MonsterGenerator generateMonsterSono = new MonsterGenerator(monstroSono);
+		MonsterGenerator generateMonsterPrazo = new MonsterGenerator(monstroPrazo);
+		
+		generateMonsterCansaco.gerarMonstro();
+		generateMonsterSono.gerarMonstro();
+		generateMonsterPrazo.gerarMonstro();
+		
+		cansaco = generateMonsterCansaco.getNPC();
+		sono = generateMonsterSono.getNPC();
+		prazo = generateMonsterPrazo.getNPC();
 
 	}
 
@@ -94,9 +111,22 @@ public class LevelTCC extends Level {
 			fga_table_rig5.draw();
 			playerInstance.draw();
 			professor_table.draw();
+			cansaco.draw();
+			sono.draw();
+			prazo.draw();
 			playerInstance.move(window);
 			window.update();
-				
+			
+			cansaco.caminho(cena, prazo);
+			cansaco.caminho(cena, sono);
+			cansaco.perseguir(playerInstance.x, playerInstance.y);
+			sono.caminho(cena, prazo);
+			sono.caminho(cena, cansaco);
+			sono.perseguir(playerInstance.x, playerInstance.y);
+			prazo.caminho(cena, cansaco);
+			prazo.caminho(cena, sono);
+			prazo.perseguir(playerInstance.x, playerInstance.y);
+
 				if (playerInstance.collided(book)) {
 					book.hide();
 					coletaItem1 = true;
@@ -113,7 +143,8 @@ public class LevelTCC extends Level {
 					window.exit();
 				}
 
-				if(tempo.getSecond() == 0){
+				if(tempo.getSecond() == 0 || playerInstance.collided(sono) || 
+						playerInstance.collided(cansaco) || playerInstance.collided(prazo)){
 					nextScenario = "Reintegracao";
 				}
 
