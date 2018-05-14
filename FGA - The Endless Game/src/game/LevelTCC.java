@@ -76,7 +76,7 @@ public class LevelTCC extends Level {
 		
 		tempo.setColor(Color.WHITE);
 		tempo.setFont(new Font("sansserif", Font.TRUETYPE_FONT, 15));
-		tempo.setTime(0, 0, 5);
+		tempo.setTime(0, 0, 30);
 
 		while (this.nextScenario == null) {
 			background.draw();
@@ -110,7 +110,7 @@ public class LevelTCC extends Level {
 					coletaItem3 = true;
 				}
 				if(coletaItem1 == true && coletaItem2 == true && coletaItem3 == true) {
-					window.exit();
+					nextScenario = "FinishScene";
 				}
 
 				if(tempo.getSecond() == 0){

@@ -38,14 +38,13 @@ public class Reintegracao extends Scenario {
 				e.printStackTrace();
 			}
 			if(count == 0) {
-				nextScenario = "GameOver";
+				return "GameOver";
 			}
-			if (keyboard.keyDown(Keyboard.ENTER_KEY)) {
-				nextScenario = "LevelTCC";
-				break;
+			else if (keyboard.keyDown(Keyboard.ENTER_KEY)) {
+				return "QuestionCalculo1Scene1";
+				
 			} else if (keyboard.keyDown(Keyboard.ESCAPE_KEY)) {
-				nextScenario = "GameOver";
-				break;
+				return "GameOver";
 			}
 		}
 		return nextScenario;
