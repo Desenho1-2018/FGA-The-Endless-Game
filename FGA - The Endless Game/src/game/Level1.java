@@ -9,15 +9,25 @@ public class Level1 extends Level {
 	private NPC npc;
 	private Scenario cena;
 	private GameObject parede;
+	private Wall parede1;
 	public Level1(Window gameWindow, String name){
 
 		this.window = gameWindow;
 		this.scenarioName = name;
 		addPlayer(640, 350, "src//recursos//sprite//jogador2.png", 20, window);
 		npc = new NPC(300,300);
-		
 		parede = new GameObject(600,300, "src//recursos//tiles//wallextended.png", 1, GameObjectType.WALL);
 		this.addSceneObjects(parede);
+		parede1=new Wall("src//recursos//sprite//parededebaixo3.png",600,580,800,10);
+		this.addSceneObjects((GameObject)parede1);
+		int i,i2;
+		parede1.paredeslateraislabirinto2();
+		parede1.labirinto();
+		i2=parede1.sizeparedes();
+		for(i=0;i<i2;i++) {
+			this.addSceneObjects(parede1.getparede(i));
+		}
+		
 	}
 
 	@Override
@@ -48,7 +58,8 @@ public class Level1 extends Level {
 			//player.caminho(cena , parede);
 			npc.caminho(cena,parede);
 			playerInstance.move(window);
-			
+			parede1.paredesdraw();
+		    parede1.draw();	
 			parede.update();
 			window.update();
 

@@ -2,6 +2,7 @@ package game;
 
 
 import jplay.Window;
+import game.Player;
 
 public abstract class Level extends Scenario {
 	
@@ -20,7 +21,7 @@ public abstract class Level extends Scenario {
 		this.playerInstance = Player.getPlayerInstance(posX, posY, spritePath, spriteDivision, gameWindow);
 	}
 	
-	public GameObjectType playerCollision() {
+	protected GameObjectType playerCollision() {
 	
 		GameObjectType type = null;
 		
@@ -40,6 +41,8 @@ public abstract class Level extends Scenario {
 					type = GameObjectType.OTHER;
 				} else if(obj.getType() == GameObjectType.NOTHING) {
 					type = GameObjectType.NOTHING;
+				} else if(obj.getType() == GameObjectType.TRANSITION) {
+					type = GameObjectType.TRANSITION;
 				}
 				
 			}
@@ -48,5 +51,7 @@ public abstract class Level extends Scenario {
 		
 		return type;
 	}
+	
+	protected void initializeObjects() {};
 
 }

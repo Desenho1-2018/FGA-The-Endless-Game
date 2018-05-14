@@ -4,7 +4,7 @@ import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Window;
 
-public class QuestionMDSScene extends Scenario {
+public class QuestionMDSScene extends Level {
 
 	private GameObject arrow = null;
 	private int option = 0;
@@ -20,6 +20,9 @@ public class QuestionMDSScene extends Scenario {
 		background = new GameImage("src//recursos//sprite//lousa.jpeg");
 		arrow = new GameObject(50, 300, "src//recursos//sprite//arrow_transparente.png", 1, GameObjectType.OTHER);
 		this.numberQuestion = numberQuestion;
+		this.addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
+		
+		
 		
 		if(numberQuestion == 1){
 			GameObject limit = new GameObject(50, 50, "src//recursos//sprite//question//rup.jpeg", 1, GameObjectType.OTHER);
@@ -97,10 +100,11 @@ public class QuestionMDSScene extends Scenario {
 	}
 	
 	public String runScenario() {
-	
+		
 		initializeKeyboard();
 		updateScenario();
 		System.out.println(nextScenario);
+		this.playerInstance.setPreviousLevel("LevelMDS");
 		return nextScenario;
 		
 	}
@@ -142,19 +146,25 @@ public class QuestionMDSScene extends Scenario {
 		  if(numberQuestion == 1){
 			switch(option){
 			  case 0: 
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene1");
+				   this.playerInstance.setScore(1);
+				   waitAtime();
 				nextScenario = "BattleScene";
 				 break;
 			  case 1:
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene1");
+				   this.playerInstance.setScore(1);
+				   waitAtime();
 				nextScenario = "BattleScene";
 				break;	
 			  case 2:
-				new Battle(true);    
+				new Battle(true, "QuestionMDSScene1");    
 				nextScenario = "BattleScene";
 				break;
 			  case 3:
-				new Battle(false);   
+				new Battle(false, "QuestionMDSScene1");  
+				   this.playerInstance.setScore(1);
+				   waitAtime();
 				nextScenario = "BattleScene";
 				break;	
 			}
@@ -162,19 +172,25 @@ public class QuestionMDSScene extends Scenario {
 		  else if(numberQuestion == 2){
 			switch(option){
 			  case 0: 
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene2");
+				   this.playerInstance.setScore(1);
+				   waitAtime();
 				nextScenario = "BattleScene";
 			  break;
 			  case 1:
-				new Battle(false);
+				new Battle(false, "QuestionMDSScene2");
+				   this.playerInstance.setScore(1);
+				   waitAtime();
 				nextScenario = "BattleScene";
 			  break;	
 			  case 2:
-				new Battle(false);    
+				new Battle(false, "QuestionMDSScene2"); 
+				   this.playerInstance.setScore(1);
+				   waitAtime();
 				nextScenario = "BattleScene";
 			  break;
 			  case 3:
-				new Battle(true);   
+				new Battle(true, "QuestionMDSScene2");   
 				nextScenario = "BattleScene";
 			  break;	
 			}  
@@ -182,23 +198,38 @@ public class QuestionMDSScene extends Scenario {
 		  else if(numberQuestion == 3){
 			switch(option){
 			 case 0: 
-			   new Battle(false);
+			   new Battle(false, "QuestionMDSScene3");
+			   this.playerInstance.setScore(1);
+			   waitAtime();
 			   nextScenario = "BattleScene";
 			 break;
 			 case 1:
-			   new Battle(false);
+			   new Battle(false, "QuestionMDSScene3");
+			   this.playerInstance.setScore(1);
+			   waitAtime();
 			   nextScenario = "BattleScene";
 			 break;	
 			 case 2:
-			   new Battle(false);    
+			   new Battle(false, "QuestionMDSScene3");
+			   this.playerInstance.setScore(1);
+			   waitAtime();
 			   nextScenario = "BattleScene";
 			 break;
 			 case 3:
-			   new Battle(true);   
+			   new Battle(true, "QuestionMDSScene3");   
 			   nextScenario = "BattleScene";
 			  break;	
 				}  
 			  }
+		}
+	}
+	
+	private void waitAtime() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	

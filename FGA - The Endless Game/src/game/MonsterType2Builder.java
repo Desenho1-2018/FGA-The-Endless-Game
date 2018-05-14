@@ -6,7 +6,7 @@ public class MonsterType2Builder implements NPCBuilder {
 	
 	public MonsterType2Builder(){
 		
-		this.npc = new NPC(0, 0);
+		this.npc = new NPC(300, 300);
 		
 	}
 

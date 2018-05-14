@@ -11,5 +11,10 @@ public class MonsterGenerator {
 	public NPC getNPC(){
 		return this.npcBuilder.getNPC();
 	}
+	
+	public void generateMonster() {
+		this.npcBuilder.buildNPCDanoCausado();
+		this.npcBuilder.buildNPCPontosVida();
+	}
 
 }
