@@ -67,9 +67,9 @@ public class LevelTCC extends Level {
 		MonsterGenerator generateMonsterSono = new MonsterGenerator(monstroSono);
 		MonsterGenerator generateMonsterPrazo = new MonsterGenerator(monstroPrazo);
 		
-		generateMonsterCansaco.gerarMonstro();
-		generateMonsterSono.gerarMonstro();
-		generateMonsterPrazo.gerarMonstro();
+		generateMonsterCansaco.generateMonster();
+		generateMonsterSono.generateMonster();
+		generateMonsterPrazo.generateMonster();
 		
 		cansaco = generateMonsterCansaco.getNPC();
 		sono = generateMonsterSono.getNPC();
