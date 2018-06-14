@@ -13,7 +13,7 @@ public class QuestionCalculo1 extends Level {
 	
 	//Constroi a cena e
 	//adiciona objetos na cena
-	public QuestionCalculo1(Window gameWindow, String name, int numberQuestion) {
+	public QuestionCalculo1(Window gameWindow, String name, int numberQuestion ) {
 	
 		window = gameWindow;
 		scenarioName = name;
@@ -21,50 +21,68 @@ public class QuestionCalculo1 extends Level {
 		arrow = new GameObject(50, 300, "src//recursos//sprite//arrow_transparente.png", 1, GameObjectType.OTHER);
 		this.numberQuestion = numberQuestion;
 		this.addPlayer(700,50,"src//recursos//sprite//jogador2.png", 20, window);
-		
-		if(numberQuestion == 1){
-			GameObject limit = new GameObject(50, 50, "src//recursos//sprite//question//limite.jpeg", 1, GameObjectType.OTHER);
-			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//27.png", 1, GameObjectType.OTHER);
-			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//36.png", 1, GameObjectType.OTHER);
-			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//45.png", 1, GameObjectType.OTHER);
-			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//54.png", 1, GameObjectType.OTHER);
+		int i;
+		for(i=0;i<3;i++) {
+      		if(numberQuestion== 1){
+		    	QuestionColletion aquestion= new QuestionColletion();
+			    question answer0=new question(50, 50, "src//recursos//sprite//question//limite.jpeg");
+			    aquestion.setquestion(answer0);
+			    question answer1=new question(100, 300, "src//recursos//sprite//question//27.png");
+			    aquestion.setquestion(answer1);
+			    question answer5=new question(100, 350, "src//recursos//sprite//question//36.png");
+			    aquestion.setquestion(answer5);
+			    question limit=new question(50, 50, "src//recursos//sprite//question//limite.jpeg");
+			    aquestion.setquestion(limit);
+			    question answer2= new question(100, 400, "src//recursos//sprite//question//45.png");
+			    aquestion.setquestion(answer2);
+			    question answer3 = new question(100, 450, "src//recursos//sprite//question//54.png");
+			    aquestion.setquestion(answer3);
+			    printquestiontela(aquestion);
 			
-			this.addSceneObjects(answer0);
-			this.addSceneObjects(answer1);
-			this.addSceneObjects(answer2);
-			this.addSceneObjects(answer3);
-			this.addSceneObjects(limit);	
-		}
-		
-		else if(numberQuestion == 2){
-			GameObject derivada = new GameObject(50, 50, "src//recursos//sprite//question//derivada.jpeg", 1, GameObjectType.OTHER);
-			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//d3.png", 1, GameObjectType.OTHER);
-			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//d2.png", 1, GameObjectType.OTHER);
-			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//d1.png", 1, GameObjectType.OTHER);
-			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//d4.png", 1, GameObjectType.OTHER);
+		   }	else if(numberQuestion == 2){
+			    QuestionColletion aquestion2=new QuestionColletion();
+			    question derivada = new question(50, 50, "src//recursos//sprite//question//derivada.jpeg");
+	            aquestion2.setquestion(derivada);
+			    aquestion2 = this.add(100, 300, "src//recursos//sprite//question//d3.png",aquestion2);	
+			    aquestion2 = this.add(100, 350, "src//recursos//sprite//question//d2.png", aquestion2);
+			    aquestion2 = this.add(100, 400, "src//recursos//sprite//question//d1.png",aquestion2);
+			    aquestion2= this.add(100, 450, "src//recursos//sprite//question//d4.png",aquestion2);
+			    printquestiontela(aquestion2);
 			
-			this.addSceneObjects(answer0);
-			this.addSceneObjects(answer1);
-			this.addSceneObjects(answer2);
-			this.addSceneObjects(answer3);
-			this.addSceneObjects(derivada);	
-		}
-		
-		else if(numberQuestion == 3){
-			GameObject integral = new GameObject(50, 50, "src//recursos//sprite//question//integral.jpeg", 1, GameObjectType.OTHER);
-			GameObject answer0 = new GameObject(100, 300, "src//recursos//sprite//question//0.png", 1, GameObjectType.OTHER);
-			GameObject answer1 = new GameObject(100, 350, "src//recursos//sprite//question//1.png", 1, GameObjectType.OTHER);
-			GameObject answer2 = new GameObject(100, 400, "src//recursos//sprite//question//2.png", 1, GameObjectType.OTHER);
-			GameObject answer3 = new GameObject(100, 450, "src//recursos//sprite//question//3.png", 1, GameObjectType.OTHER);
 			
-			this.addSceneObjects(answer0);
-			this.addSceneObjects(answer1);
-			this.addSceneObjects(answer2);
-			this.addSceneObjects(answer3);
-			this.addSceneObjects(integral);	
-		}
+		    }
+		
+		    else if(numberQuestion == 3){
+			    QuestionColletion aquestion3= new QuestionColletion();
+			    aquestion3 = this.add(50, 50, "src//recursos//sprite//question//integral.jpeg",aquestion3);
+			    aquestion3= this.add(100, 300, "src//recursos//sprite//question//0.png",aquestion3);
+			    aquestion3= this.add(100, 350, "src//recursos//sprite//question//1.png",aquestion3);
+			    aquestion3 = this.add(100, 400, "src//recursos//sprite//question//2.png",aquestion3);
+			    aquestion3 = this.add(100, 450, "src//recursos//sprite//question//3.png", aquestion3);
+			    printquestiontela(aquestion3);
+				
+		    }else {
+		    	return ;
+		    }
+	
+		} 
+	  }
+	public void printquestiontela(QuestionColletion aquestion3 ) {
+	    	int i;
+			for(i=0;i<aquestion3.sizeQuestions();i++) {
+				this.addSceneObjects(aquestion3.getquestion(i));	
+			}
+	    	
+	    }
+	public QuestionColletion add(int x, int y, String s, QuestionColletion aquestion3) {
+		question question1=new question(x,y,s);
+		aquestion3.setquestion(question1);
+		return  aquestion3;
 		
 	}
+		
+		
+	
 
 	//Atualiza os quadros da cena
 	protected void updateScenario() {
